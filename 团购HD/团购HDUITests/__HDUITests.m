@@ -1,6 +1,6 @@
 //
-//  __UITests.m
-//  团购UITests
+//  __HDUITests.m
+//  团购HDUITests
 //
 //  Created by BJT on 17/6/14.
 //  Copyright © 2017年 BJT. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface __UITests : XCTestCase
+@interface __HDUITests : XCTestCase
 
 @end
 
-@implementation __UITests
+@implementation __HDUITests
 
 - (void)setUp {
     [super setUp];

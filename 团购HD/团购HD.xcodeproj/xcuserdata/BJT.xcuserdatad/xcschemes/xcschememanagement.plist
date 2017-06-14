@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>团购.xcscheme</key>
+		<key>团购HD.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6C7AAAB61EF0F6F60012AF85</key>
+		<key>6C7AAAF51EF0F86E0012AF85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C7AAACF1EF0F6F60012AF85</key>
+		<key>6C7AAB0E1EF0F86E0012AF85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C7AAADA1EF0F6F60012AF85</key>
+		<key>6C7AAB191EF0F86E0012AF85</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,6 +1,6 @@
 //
-//  __Tests.m
-//  团购Tests
+//  __HDTests.m
+//  团购HDTests
 //
 //  Created by BJT on 17/6/14.
 //  Copyright © 2017年 BJT. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface __Tests : XCTestCase
+@interface __HDTests : XCTestCase
 
 @end
 
-@implementation __Tests
+@implementation __HDTests
 
 - (void)setUp {
     [super setUp];
