@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TGCityViewController">
+            <connections>
+                <outlet property="cityTable" destination="WNe-vv-w4k" id="mkP-0z-pUR"/>
+                <outlet property="cover" destination="Nx6-c5-NS9" id="1ty-he-oGE"/>
+                <outlet property="searchBar" destination="7zp-yx-BMS" id="UGT-EU-d0Z"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="请输入城市名或者拼音" backgroundImage="bg_login_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-yx-BMS">
+                    <rect key="frame" x="-78" y="8" width="600" height="44"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="TeF-9r-ugy"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="TeF-9r-ugy"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="TeF-9r-ugy"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="FeZ-9g-f6V"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WNe-vv-w4k">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="YX5-Kl-93g"/>
+                        <outlet property="delegate" destination="-1" id="sGJ-lV-8cu"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nx6-c5-NS9" userLabel="遮盖">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="coverClick" destination="-1" eventType="touchUpInside" id="plw-xE-Jaz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Nx6-c5-NS9" firstAttribute="height" secondItem="WNe-vv-w4k" secondAttribute="height" id="7r7-WT-wwp"/>
+                <constraint firstItem="7zp-yx-BMS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="991-Xc-jSe"/>
+                <constraint firstItem="7zp-yx-BMS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="9Co-Yk-nxl"/>
+                <constraint firstItem="WNe-vv-w4k" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CLb-G6-LzR"/>
+                <constraint firstAttribute="trailing" secondItem="7zp-yx-BMS" secondAttribute="trailing" constant="15" id="Hqc-sV-G1O"/>
+                <constraint firstItem="Nx6-c5-NS9" firstAttribute="centerY" secondItem="WNe-vv-w4k" secondAttribute="centerY" id="JfJ-b5-AZ6"/>
+                <constraint firstItem="Nx6-c5-NS9" firstAttribute="centerX" secondItem="WNe-vv-w4k" secondAttribute="centerX" id="aik-c3-zvN"/>
+                <constraint firstItem="WNe-vv-w4k" firstAttribute="top" secondItem="7zp-yx-BMS" secondAttribute="bottom" constant="15" id="hYc-5s-Hdm"/>
+                <constraint firstAttribute="bottom" secondItem="WNe-vv-w4k" secondAttribute="bottom" id="mZe-Mv-s0s"/>
+                <constraint firstAttribute="trailing" secondItem="WNe-vv-w4k" secondAttribute="trailing" id="nbH-zT-Rqe"/>
+                <constraint firstItem="Nx6-c5-NS9" firstAttribute="width" secondItem="WNe-vv-w4k" secondAttribute="width" id="tue-Jm-jcC"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="WNe-vv-w4k"/>
+                    <exclude reference="Nx6-c5-NS9"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="991-Xc-jSe"/>
+                    <exclude reference="9Co-Yk-nxl"/>
+                    <exclude reference="Hqc-sV-G1O"/>
+                    <exclude reference="CLb-G6-LzR"/>
+                    <exclude reference="hYc-5s-Hdm"/>
+                    <exclude reference="mZe-Mv-s0s"/>
+                    <exclude reference="nbH-zT-Rqe"/>
+                    <exclude reference="7r7-WT-wwp"/>
+                    <exclude reference="JfJ-b5-AZ6"/>
+                    <exclude reference="aik-c3-zvN"/>
+                    <exclude reference="tue-Jm-jcC"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="constraints">
+                    <include reference="991-Xc-jSe"/>
+                    <include reference="9Co-Yk-nxl"/>
+                    <include reference="Hqc-sV-G1O"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="WNe-vv-w4k"/>
+                    <include reference="Nx6-c5-NS9"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="CLb-G6-LzR"/>
+                    <include reference="hYc-5s-Hdm"/>
+                    <include reference="mZe-Mv-s0s"/>
+                    <include reference="nbH-zT-Rqe"/>
+                    <include reference="7r7-WT-wwp"/>
+                    <include reference="JfJ-b5-AZ6"/>
+                    <include reference="aik-c3-zvN"/>
+                    <include reference="tue-Jm-jcC"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="88" y="363"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_login_textfield" width="9" height="11"/>
+    </resources>
+</document>

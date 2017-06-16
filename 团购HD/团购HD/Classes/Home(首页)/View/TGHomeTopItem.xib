@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TGHomeTopItem">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="35"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQg-IM-yvF" userLabel="分割线">
+                    <rect key="frame" x="5" y="5" width="1" height="25"/>
+                    <animations/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="5tU-6C-kVw"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OM2-Q2-dbp" userLabel="标题">
+                    <rect key="frame" x="45" y="0.0" width="75" height="15"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="wma-hB-w20"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="子标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52g-n7-pgx" userLabel="子标题">
+                    <rect key="frame" x="45" y="15" width="57" height="15"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="too-WQ-Pes"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIZ-wm-Yx3">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="35"/>
+                    <animations/>
+                    <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" image="icon_category_1"/>
+                    <state key="highlighted" image="icon_category_highlighted_1"/>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="OM2-Q2-dbp" secondAttribute="trailing" id="0Ud-B8-EIl"/>
+                <constraint firstItem="KIZ-wm-Yx3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2iS-IA-BiU"/>
+                <constraint firstAttribute="bottom" secondItem="52g-n7-pgx" secondAttribute="bottom" constant="5" id="444-EQ-lBw"/>
+                <constraint firstItem="52g-n7-pgx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="45" id="8bM-cQ-Y8n"/>
+                <constraint firstAttribute="bottom" secondItem="KIZ-wm-Yx3" secondAttribute="bottom" id="DsV-ql-iXZ"/>
+                <constraint firstItem="OM2-Q2-dbp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ej0-Ut-ZVy"/>
+                <constraint firstItem="bQg-IM-yvF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="McL-gt-O4M"/>
+                <constraint firstItem="OM2-Q2-dbp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="45" id="TVZ-LT-l2u"/>
+                <constraint firstItem="bQg-IM-yvF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="X8C-qe-RDC"/>
+                <constraint firstItem="KIZ-wm-Yx3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dZf-oZ-BWE"/>
+                <constraint firstAttribute="trailing" secondItem="KIZ-wm-Yx3" secondAttribute="trailing" id="n40-bU-MLP"/>
+                <constraint firstAttribute="bottom" secondItem="bQg-IM-yvF" secondAttribute="bottom" constant="5" id="rWI-OP-i1M"/>
+                <constraint firstAttribute="trailing" secondItem="52g-n7-pgx" secondAttribute="trailing" constant="18" id="xRc-gl-1Qq"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="iconButton" destination="KIZ-wm-Yx3" id="Ivm-3v-aB0"/>
+            </connections>
+            <point key="canvasLocation" x="290" y="365.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_category_1" width="30" height="30"/>
+        <image name="icon_category_highlighted_1" width="30" height="30"/>
+    </resources>
+</document>

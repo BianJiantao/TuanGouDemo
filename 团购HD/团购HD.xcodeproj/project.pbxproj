@@ -7,14 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C7AAAFB1EF0F86E0012AF85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAAFA1EF0F86E0012AF85 /* main.m */; };
-		6C7AAAFE1EF0F86E0012AF85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAAFD1EF0F86E0012AF85 /* AppDelegate.m */; };
-		6C7AAB011EF0F86E0012AF85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB001EF0F86E0012AF85 /* ViewController.m */; };
-		6C7AAB041EF0F86E0012AF85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AAB021EF0F86E0012AF85 /* Main.storyboard */; };
 		6C7AAB061EF0F86E0012AF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AAB051EF0F86E0012AF85 /* Assets.xcassets */; };
-		6C7AAB091EF0F86E0012AF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AAB071EF0F86E0012AF85 /* LaunchScreen.storyboard */; };
 		6C7AAB141EF0F86E0012AF85 /* __HDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB131EF0F86E0012AF85 /* __HDTests.m */; };
 		6C7AAB1F1EF0F86E0012AF85 /* __HDUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB1E1EF0F86E0012AF85 /* __HDUITests.m */; };
+		6C7AAB3A1EF120020012AF85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB371EF120020012AF85 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB3B1EF120020012AF85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB381EF120020012AF85 /* main.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB411EF120B50012AF85 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AAB3D1EF120B50012AF85 /* categories.plist */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB421EF120B50012AF85 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AAB3E1EF120B50012AF85 /* cities.plist */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB431EF120B50012AF85 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AAB3F1EF120B50012AF85 /* cityGroups.plist */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB441EF120B50012AF85 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AAB401EF120B50012AF85 /* sorts.plist */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB471EF123F30012AF85 /* TGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB461EF123F30012AF85 /* TGNavigationController.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB4A1EF124160012AF85 /* TGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB491EF124160012AF85 /* TGHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB4D1EF124410012AF85 /* TGConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB4C1EF124410012AF85 /* TGConst.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB501EF12C6A0012AF85 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB4F1EF12C6A0012AF85 /* UIBarButtonItem+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB531EF130DF0012AF85 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB521EF130DF0012AF85 /* UIView+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB561EF1346F0012AF85 /* TGHomeTopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB551EF1346F0012AF85 /* TGHomeTopItem.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB581EF134820012AF85 /* TGHomeTopItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AAB571EF134820012AF85 /* TGHomeTopItem.xib */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB5B1EF379A00012AF85 /* TGCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB5A1EF379A00012AF85 /* TGCategoryViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB5E1EF37A200012AF85 /* TGHomeDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB5D1EF37A200012AF85 /* TGHomeDropDownMenu.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB601EF37A2D0012AF85 /* TGHomeDropDownMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AAB5F1EF37A2D0012AF85 /* TGHomeDropDownMenu.xib */; settings = {ASSET_TAGS = (); }; };
+		6C7AAB681EF3BCF70012AF85 /* TGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AAB671EF3BCF70012AF85 /* TGCategory.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABB41EF3BF460012AF85 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABA61EF3BF460012AF85 /* MJConst.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABB51EF3BF460012AF85 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABA91EF3BF460012AF85 /* MJFoundation.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABB61EF3BF460012AF85 /* MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABAB1EF3BF460012AF85 /* MJIvar.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABB71EF3BF460012AF85 /* MJType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABAD1EF3BF460012AF85 /* MJType.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABB81EF3BF460012AF85 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABAF1EF3BF460012AF85 /* NSObject+MJCoding.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABB91EF3BF460012AF85 /* NSObject+MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABB11EF3BF460012AF85 /* NSObject+MJIvar.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABBA1EF3BF460012AF85 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABB31EF3BF460012AF85 /* NSObject+MJKeyValue.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABBD1EF3C2B90012AF85 /* TGHomeDropDownMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABBC1EF3C2B90012AF85 /* TGHomeDropDownMainCell.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABC01EF3C2C70012AF85 /* TGHomeDropDownSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABBF1EF3C2C70012AF85 /* TGHomeDropDownSubCell.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABC91EF3CC8C0012AF85 /* TGDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABC71EF3CC8C0012AF85 /* TGDistrictViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABCA1EF3CC8C0012AF85 /* TGDistrictViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AABC81EF3CC8C0012AF85 /* TGDistrictViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		6C7AABCE1EF3D50E0012AF85 /* TGCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABCC1EF3D50E0012AF85 /* TGCityViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABCF1EF3D50E0012AF85 /* TGCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AABCD1EF3D50E0012AF85 /* TGCityViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		6C7AABD21EF3F9E60012AF85 /* TGCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABD11EF3F9E60012AF85 /* TGCityGroup.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,14 +62,7 @@
 
 /* Begin PBXFileReference section */
 		6C7AAAF61EF0F86E0012AF85 /* 团购HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "团购HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C7AAAFA1EF0F86E0012AF85 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6C7AAAFC1EF0F86E0012AF85 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6C7AAAFD1EF0F86E0012AF85 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6C7AAAFF1EF0F86E0012AF85 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6C7AAB001EF0F86E0012AF85 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		6C7AAB031EF0F86E0012AF85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6C7AAB051EF0F86E0012AF85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		6C7AAB081EF0F86E0012AF85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C7AAB0A1EF0F86E0012AF85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C7AAB0F1EF0F86E0012AF85 /* 团购HDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "团购HDTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7AAB131EF0F86E0012AF85 /* __HDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __HDTests.m; sourceTree = "<group>"; };
@@ -51,6 +70,60 @@
 		6C7AAB1A1EF0F86E0012AF85 /* 团购HDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "团购HDUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7AAB1E1EF0F86E0012AF85 /* __HDUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __HDUITests.m; sourceTree = "<group>"; };
 		6C7AAB201EF0F86E0012AF85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C7AAB361EF120020012AF85 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6C7AAB371EF120020012AF85 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6C7AAB381EF120020012AF85 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6C7AAB3D1EF120B50012AF85 /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
+		6C7AAB3E1EF120B50012AF85 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
+		6C7AAB3F1EF120B50012AF85 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
+		6C7AAB401EF120B50012AF85 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
+		6C7AAB451EF123F30012AF85 /* TGNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGNavigationController.h; sourceTree = "<group>"; };
+		6C7AAB461EF123F30012AF85 /* TGNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGNavigationController.m; sourceTree = "<group>"; };
+		6C7AAB481EF124160012AF85 /* TGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGHomeViewController.h; sourceTree = "<group>"; };
+		6C7AAB491EF124160012AF85 /* TGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGHomeViewController.m; sourceTree = "<group>"; };
+		6C7AAB4B1EF124410012AF85 /* TGConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGConst.h; sourceTree = "<group>"; };
+		6C7AAB4C1EF124410012AF85 /* TGConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGConst.m; sourceTree = "<group>"; };
+		6C7AAB4E1EF12C6A0012AF85 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		6C7AAB4F1EF12C6A0012AF85 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		6C7AAB511EF130DF0012AF85 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		6C7AAB521EF130DF0012AF85 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		6C7AAB541EF1346F0012AF85 /* TGHomeTopItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGHomeTopItem.h; sourceTree = "<group>"; };
+		6C7AAB551EF1346F0012AF85 /* TGHomeTopItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGHomeTopItem.m; sourceTree = "<group>"; };
+		6C7AAB571EF134820012AF85 /* TGHomeTopItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGHomeTopItem.xib; sourceTree = "<group>"; };
+		6C7AAB591EF379A00012AF85 /* TGCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCategoryViewController.h; sourceTree = "<group>"; };
+		6C7AAB5A1EF379A00012AF85 /* TGCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCategoryViewController.m; sourceTree = "<group>"; };
+		6C7AAB5C1EF37A200012AF85 /* TGHomeDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGHomeDropDownMenu.h; sourceTree = "<group>"; };
+		6C7AAB5D1EF37A200012AF85 /* TGHomeDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGHomeDropDownMenu.m; sourceTree = "<group>"; };
+		6C7AAB5F1EF37A2D0012AF85 /* TGHomeDropDownMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGHomeDropDownMenu.xib; sourceTree = "<group>"; };
+		6C7AAB661EF3BCF70012AF85 /* TGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCategory.h; sourceTree = "<group>"; };
+		6C7AAB671EF3BCF70012AF85 /* TGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCategory.m; sourceTree = "<group>"; };
+		6C7AABA51EF3BF460012AF85 /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
+		6C7AABA61EF3BF460012AF85 /* MJConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJConst.m; sourceTree = "<group>"; };
+		6C7AABA71EF3BF460012AF85 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		6C7AABA81EF3BF460012AF85 /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		6C7AABA91EF3BF460012AF85 /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		6C7AABAA1EF3BF460012AF85 /* MJIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJIvar.h; sourceTree = "<group>"; };
+		6C7AABAB1EF3BF460012AF85 /* MJIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJIvar.m; sourceTree = "<group>"; };
+		6C7AABAC1EF3BF460012AF85 /* MJType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJType.h; sourceTree = "<group>"; };
+		6C7AABAD1EF3BF460012AF85 /* MJType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJType.m; sourceTree = "<group>"; };
+		6C7AABAE1EF3BF460012AF85 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		6C7AABAF1EF3BF460012AF85 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		6C7AABB01EF3BF460012AF85 /* NSObject+MJIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJIvar.h"; sourceTree = "<group>"; };
+		6C7AABB11EF3BF460012AF85 /* NSObject+MJIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJIvar.m"; sourceTree = "<group>"; };
+		6C7AABB21EF3BF460012AF85 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		6C7AABB31EF3BF460012AF85 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		6C7AABBB1EF3C2B90012AF85 /* TGHomeDropDownMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGHomeDropDownMainCell.h; sourceTree = "<group>"; };
+		6C7AABBC1EF3C2B90012AF85 /* TGHomeDropDownMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGHomeDropDownMainCell.m; sourceTree = "<group>"; };
+		6C7AABBE1EF3C2C70012AF85 /* TGHomeDropDownSubCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGHomeDropDownSubCell.h; sourceTree = "<group>"; };
+		6C7AABBF1EF3C2C70012AF85 /* TGHomeDropDownSubCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGHomeDropDownSubCell.m; sourceTree = "<group>"; };
+		6C7AABC61EF3CC8C0012AF85 /* TGDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGDistrictViewController.h; sourceTree = "<group>"; };
+		6C7AABC71EF3CC8C0012AF85 /* TGDistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGDistrictViewController.m; sourceTree = "<group>"; };
+		6C7AABC81EF3CC8C0012AF85 /* TGDistrictViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGDistrictViewController.xib; sourceTree = "<group>"; };
+		6C7AABCB1EF3D50E0012AF85 /* TGCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCityViewController.h; sourceTree = "<group>"; };
+		6C7AABCC1EF3D50E0012AF85 /* TGCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCityViewController.m; sourceTree = "<group>"; };
+		6C7AABCD1EF3D50E0012AF85 /* TGCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGCityViewController.xib; sourceTree = "<group>"; };
+		6C7AABD01EF3F9E60012AF85 /* TGCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCityGroup.h; sourceTree = "<group>"; };
+		6C7AABD11EF3F9E60012AF85 /* TGCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCityGroup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +174,8 @@
 		6C7AAAF81EF0F86E0012AF85 /* 团购HD */ = {
 			isa = PBXGroup;
 			children = (
-				6C7AAAFC1EF0F86E0012AF85 /* AppDelegate.h */,
-				6C7AAAFD1EF0F86E0012AF85 /* AppDelegate.m */,
-				6C7AAAFF1EF0F86E0012AF85 /* ViewController.h */,
-				6C7AAB001EF0F86E0012AF85 /* ViewController.m */,
-				6C7AAB021EF0F86E0012AF85 /* Main.storyboard */,
+				6C7AAB2C1EF120020012AF85 /* Classes */,
 				6C7AAB051EF0F86E0012AF85 /* Assets.xcassets */,
-				6C7AAB071EF0F86E0012AF85 /* LaunchScreen.storyboard */,
-				6C7AAB0A1EF0F86E0012AF85 /* Info.plist */,
 				6C7AAAF91EF0F86E0012AF85 /* Supporting Files */,
 			);
 			path = "团购HD";
@@ -117,7 +184,8 @@
 		6C7AAAF91EF0F86E0012AF85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6C7AAAFA1EF0F86E0012AF85 /* main.m */,
+				6C7AAB3C1EF120B50012AF85 /* Plist */,
+				6C7AAB0A1EF0F86E0012AF85 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +206,170 @@
 				6C7AAB201EF0F86E0012AF85 /* Info.plist */,
 			);
 			path = "团购HDUITests";
+			sourceTree = "<group>";
+		};
+		6C7AAB2C1EF120020012AF85 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAB2D1EF120020012AF85 /* Home(首页) */,
+				6C7AAB311EF120020012AF85 /* Main(主要) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6C7AAB2D1EF120020012AF85 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAB2F1EF120020012AF85 /* Model */,
+				6C7AAB301EF120020012AF85 /* View */,
+				6C7AAB2E1EF120020012AF85 /* Controller */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		6C7AAB2E1EF120020012AF85 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAB481EF124160012AF85 /* TGHomeViewController.h */,
+				6C7AAB491EF124160012AF85 /* TGHomeViewController.m */,
+				6C7AAB591EF379A00012AF85 /* TGCategoryViewController.h */,
+				6C7AAB5A1EF379A00012AF85 /* TGCategoryViewController.m */,
+				6C7AABC61EF3CC8C0012AF85 /* TGDistrictViewController.h */,
+				6C7AABC71EF3CC8C0012AF85 /* TGDistrictViewController.m */,
+				6C7AABC81EF3CC8C0012AF85 /* TGDistrictViewController.xib */,
+				6C7AABCB1EF3D50E0012AF85 /* TGCityViewController.h */,
+				6C7AABCC1EF3D50E0012AF85 /* TGCityViewController.m */,
+				6C7AABCD1EF3D50E0012AF85 /* TGCityViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6C7AAB2F1EF120020012AF85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAB661EF3BCF70012AF85 /* TGCategory.h */,
+				6C7AAB671EF3BCF70012AF85 /* TGCategory.m */,
+				6C7AABD01EF3F9E60012AF85 /* TGCityGroup.h */,
+				6C7AABD11EF3F9E60012AF85 /* TGCityGroup.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6C7AAB301EF120020012AF85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAB541EF1346F0012AF85 /* TGHomeTopItem.h */,
+				6C7AAB551EF1346F0012AF85 /* TGHomeTopItem.m */,
+				6C7AAB571EF134820012AF85 /* TGHomeTopItem.xib */,
+				6C7AAB5C1EF37A200012AF85 /* TGHomeDropDownMenu.h */,
+				6C7AAB5D1EF37A200012AF85 /* TGHomeDropDownMenu.m */,
+				6C7AAB5F1EF37A2D0012AF85 /* TGHomeDropDownMenu.xib */,
+				6C7AABBB1EF3C2B90012AF85 /* TGHomeDropDownMainCell.h */,
+				6C7AABBC1EF3C2B90012AF85 /* TGHomeDropDownMainCell.m */,
+				6C7AABBE1EF3C2C70012AF85 /* TGHomeDropDownSubCell.h */,
+				6C7AABBF1EF3C2C70012AF85 /* TGHomeDropDownSubCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6C7AAB311EF120020012AF85 /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAB691EF3BD880012AF85 /* Lib */,
+				6C7AAB321EF120020012AF85 /* Category */,
+				6C7AAB331EF120020012AF85 /* Controller */,
+				6C7AAB341EF120020012AF85 /* Model */,
+				6C7AAB351EF120020012AF85 /* Other */,
+				6C7AAB391EF120020012AF85 /* View */,
+			);
+			path = "Main(主要)";
+			sourceTree = "<group>";
+		};
+		6C7AAB321EF120020012AF85 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAB511EF130DF0012AF85 /* UIView+Extension.h */,
+				6C7AAB521EF130DF0012AF85 /* UIView+Extension.m */,
+				6C7AAB4E1EF12C6A0012AF85 /* UIBarButtonItem+Extension.h */,
+				6C7AAB4F1EF12C6A0012AF85 /* UIBarButtonItem+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		6C7AAB331EF120020012AF85 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAB451EF123F30012AF85 /* TGNavigationController.h */,
+				6C7AAB461EF123F30012AF85 /* TGNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6C7AAB341EF120020012AF85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6C7AAB351EF120020012AF85 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAB361EF120020012AF85 /* AppDelegate.h */,
+				6C7AAB371EF120020012AF85 /* AppDelegate.m */,
+				6C7AAB381EF120020012AF85 /* main.m */,
+				6C7AAB4B1EF124410012AF85 /* TGConst.h */,
+				6C7AAB4C1EF124410012AF85 /* TGConst.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		6C7AAB391EF120020012AF85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6C7AAB3C1EF120B50012AF85 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AAB3D1EF120B50012AF85 /* categories.plist */,
+				6C7AAB3E1EF120B50012AF85 /* cities.plist */,
+				6C7AAB3F1EF120B50012AF85 /* cityGroups.plist */,
+				6C7AAB401EF120B50012AF85 /* sorts.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		6C7AAB691EF3BD880012AF85 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AABA41EF3BF460012AF85 /* MJExtension */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		6C7AABA41EF3BF460012AF85 /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AABA51EF3BF460012AF85 /* MJConst.h */,
+				6C7AABA61EF3BF460012AF85 /* MJConst.m */,
+				6C7AABA71EF3BF460012AF85 /* MJExtension.h */,
+				6C7AABA81EF3BF460012AF85 /* MJFoundation.h */,
+				6C7AABA91EF3BF460012AF85 /* MJFoundation.m */,
+				6C7AABAA1EF3BF460012AF85 /* MJIvar.h */,
+				6C7AABAB1EF3BF460012AF85 /* MJIvar.m */,
+				6C7AABAC1EF3BF460012AF85 /* MJType.h */,
+				6C7AABAD1EF3BF460012AF85 /* MJType.m */,
+				6C7AABAE1EF3BF460012AF85 /* NSObject+MJCoding.h */,
+				6C7AABAF1EF3BF460012AF85 /* NSObject+MJCoding.m */,
+				6C7AABB01EF3BF460012AF85 /* NSObject+MJIvar.h */,
+				6C7AABB11EF3BF460012AF85 /* NSObject+MJIvar.m */,
+				6C7AABB21EF3BF460012AF85 /* NSObject+MJKeyValue.h */,
+				6C7AABB31EF3BF460012AF85 /* NSObject+MJKeyValue.m */,
+			);
+			path = MJExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +434,7 @@
 		6C7AAAEE1EF0F86E0012AF85 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TG;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = BJT;
 				TargetAttributes = {
@@ -243,9 +476,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C7AAB091EF0F86E0012AF85 /* LaunchScreen.storyboard in Resources */,
+				6C7AAB581EF134820012AF85 /* TGHomeTopItem.xib in Resources */,
+				6C7AAB601EF37A2D0012AF85 /* TGHomeDropDownMenu.xib in Resources */,
+				6C7AAB421EF120B50012AF85 /* cities.plist in Resources */,
+				6C7AAB411EF120B50012AF85 /* categories.plist in Resources */,
+				6C7AAB441EF120B50012AF85 /* sorts.plist in Resources */,
+				6C7AABCA1EF3CC8C0012AF85 /* TGDistrictViewController.xib in Resources */,
 				6C7AAB061EF0F86E0012AF85 /* Assets.xcassets in Resources */,
-				6C7AAB041EF0F86E0012AF85 /* Main.storyboard in Resources */,
+				6C7AAB431EF120B50012AF85 /* cityGroups.plist in Resources */,
+				6C7AABCF1EF3D50E0012AF85 /* TGCityViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +509,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C7AAB011EF0F86E0012AF85 /* ViewController.m in Sources */,
-				6C7AAAFE1EF0F86E0012AF85 /* AppDelegate.m in Sources */,
-				6C7AAAFB1EF0F86E0012AF85 /* main.m in Sources */,
+				6C7AABB91EF3BF460012AF85 /* NSObject+MJIvar.m in Sources */,
+				6C7AAB561EF1346F0012AF85 /* TGHomeTopItem.m in Sources */,
+				6C7AABB71EF3BF460012AF85 /* MJType.m in Sources */,
+				6C7AAB5E1EF37A200012AF85 /* TGHomeDropDownMenu.m in Sources */,
+				6C7AABBA1EF3BF460012AF85 /* NSObject+MJKeyValue.m in Sources */,
+				6C7AABB61EF3BF460012AF85 /* MJIvar.m in Sources */,
+				6C7AAB501EF12C6A0012AF85 /* UIBarButtonItem+Extension.m in Sources */,
+				6C7AAB4A1EF124160012AF85 /* TGHomeViewController.m in Sources */,
+				6C7AAB471EF123F30012AF85 /* TGNavigationController.m in Sources */,
+				6C7AABC91EF3CC8C0012AF85 /* TGDistrictViewController.m in Sources */,
+				6C7AAB531EF130DF0012AF85 /* UIView+Extension.m in Sources */,
+				6C7AAB4D1EF124410012AF85 /* TGConst.m in Sources */,
+				6C7AABB51EF3BF460012AF85 /* MJFoundation.m in Sources */,
+				6C7AAB3B1EF120020012AF85 /* main.m in Sources */,
+				6C7AABC01EF3C2C70012AF85 /* TGHomeDropDownSubCell.m in Sources */,
+				6C7AABBD1EF3C2B90012AF85 /* TGHomeDropDownMainCell.m in Sources */,
+				6C7AAB3A1EF120020012AF85 /* AppDelegate.m in Sources */,
+				6C7AABB81EF3BF460012AF85 /* NSObject+MJCoding.m in Sources */,
+				6C7AAB5B1EF379A00012AF85 /* TGCategoryViewController.m in Sources */,
+				6C7AABB41EF3BF460012AF85 /* MJConst.m in Sources */,
+				6C7AABCE1EF3D50E0012AF85 /* TGCityViewController.m in Sources */,
+				6C7AABD21EF3F9E60012AF85 /* TGCityGroup.m in Sources */,
+				6C7AAB681EF3BCF70012AF85 /* TGCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,25 +565,6 @@
 			targetProxy = 6C7AAB1B1EF0F86E0012AF85 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		6C7AAB021EF0F86E0012AF85 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C7AAB031EF0F86E0012AF85 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6C7AAB071EF0F86E0012AF85 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C7AAB081EF0F86E0012AF85 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6C7AAB211EF0F86E0012AF85 /* Debug */ = {
@@ -413,7 +653,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "团购HD/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BJT.--HD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,7 +666,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "团购HD/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BJT.--HD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +742,7 @@
 				6C7AAB251EF0F86E0012AF85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C7AAB261EF0F86E0012AF85 /* Build configuration list for PBXNativeTarget "团购HDTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +751,7 @@
 				6C7AAB281EF0F86E0012AF85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C7AAB291EF0F86E0012AF85 /* Build configuration list for PBXNativeTarget "团购HDUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +760,7 @@
 				6C7AAB2B1EF0F86E0012AF85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
