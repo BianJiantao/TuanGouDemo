@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="请输入城市名或者拼音" backgroundImage="bg_login_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-yx-BMS">
+                <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" placeholder="请输入城市名或者拼音" backgroundImage="bg_login_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-yx-BMS">
                     <rect key="frame" x="-78" y="8" width="600" height="44"/>
                     <animations/>
                     <constraints>
@@ -80,17 +80,17 @@
                     <exclude reference="Nx6-c5-NS9"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="991-Xc-jSe"/>
-                    <exclude reference="9Co-Yk-nxl"/>
-                    <exclude reference="Hqc-sV-G1O"/>
-                    <exclude reference="CLb-G6-LzR"/>
-                    <exclude reference="hYc-5s-Hdm"/>
-                    <exclude reference="mZe-Mv-s0s"/>
-                    <exclude reference="nbH-zT-Rqe"/>
                     <exclude reference="7r7-WT-wwp"/>
                     <exclude reference="JfJ-b5-AZ6"/>
                     <exclude reference="aik-c3-zvN"/>
                     <exclude reference="tue-Jm-jcC"/>
+                    <exclude reference="CLb-G6-LzR"/>
+                    <exclude reference="hYc-5s-Hdm"/>
+                    <exclude reference="mZe-Mv-s0s"/>
+                    <exclude reference="nbH-zT-Rqe"/>
+                    <exclude reference="991-Xc-jSe"/>
+                    <exclude reference="9Co-Yk-nxl"/>
+                    <exclude reference="Hqc-sV-G1O"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -106,17 +106,17 @@
                     <include reference="Nx6-c5-NS9"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="CLb-G6-LzR"/>
-                    <include reference="hYc-5s-Hdm"/>
-                    <include reference="mZe-Mv-s0s"/>
-                    <include reference="nbH-zT-Rqe"/>
                     <include reference="7r7-WT-wwp"/>
                     <include reference="JfJ-b5-AZ6"/>
                     <include reference="aik-c3-zvN"/>
                     <include reference="tue-Jm-jcC"/>
+                    <include reference="CLb-G6-LzR"/>
+                    <include reference="hYc-5s-Hdm"/>
+                    <include reference="mZe-Mv-s0s"/>
+                    <include reference="nbH-zT-Rqe"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="88" y="363"/>
+            <point key="canvasLocation" x="-1" y="375"/>
         </view>
     </objects>
     <resources>

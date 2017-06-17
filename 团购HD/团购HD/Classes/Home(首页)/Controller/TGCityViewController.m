@@ -8,11 +8,14 @@
 
 
 #import "MJExtension.h"
+#import "UIView+AutoLayout.h"
+
 #import "UIBarButtonItem+Extension.h"
 
 #import "TGConst.h"
 #import "TGCityViewController.h"
 #import "TGCityGroup.h"
+#import "TGCitySearchResultController.h"
 
 
 @interface TGCityViewController () <UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
@@ -30,14 +33,34 @@
  */
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
-
 /**
  *  存放 TGCityGroup 模型
  */
 @property (nonatomic,strong) NSArray<TGCityGroup *> *cityGroups;
+/**
+ *  城市搜索结果控制器
+ */
+@property (nonatomic,weak) TGCitySearchResultController *citySearchResultVc;
+
 @end
 
 @implementation TGCityViewController
+
+
+- (TGCitySearchResultController *)citySearchResultVc
+{
+    if (_citySearchResultVc == nil) {
+        TGCitySearchResultController *resultVc = [[TGCitySearchResultController alloc] init];
+        [self addChildViewController:resultVc]; // 添加到子控制器
+        self.citySearchResultVc = resultVc;
+        
+        [self.view addSubview:_citySearchResultVc.view];
+        [_citySearchResultVc.view autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+        [_citySearchResultVc.view autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.searchBar withOffset:15];
+        
+    }
+    return _citySearchResultVc;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,6 +83,24 @@
 }
 
 #pragma mark - searchBar 代理方法
+
+/**
+ *  搜索框文本改变
+ */
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if (searchText.length) { // 搜索框有输入文字
+        
+        self.citySearchResultVc.view.hidden = NO;
+        self.citySearchResultVc.searchText = searchText;
+    
+    }else{  // 搜索框为空
+        
+        self.citySearchResultVc.view.hidden = YES;
+        
+    }
+}
+
 /**
  *  键盘弹出,搜索框开始编辑
  */
@@ -99,6 +140,11 @@
         
     } completion:nil];
     
+    //  隐藏搜索结果控制器 view
+    self.citySearchResultVc.view.hidden = YES;
+    // 清空搜索文本
+    searchBar.text = nil;
+    
     return YES;
 }
 /**
@@ -107,7 +153,6 @@
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     [searchBar resignFirstResponder];
-    self.searchBar.text = nil;
 }
 
 #pragma mark -tableView 数据源方法

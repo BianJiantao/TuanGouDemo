@@ -41,6 +41,10 @@
 		6C7AABCE1EF3D50E0012AF85 /* TGCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABCC1EF3D50E0012AF85 /* TGCityViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6C7AABCF1EF3D50E0012AF85 /* TGCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C7AABCD1EF3D50E0012AF85 /* TGCityViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		6C7AABD21EF3F9E60012AF85 /* TGCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABD11EF3F9E60012AF85 /* TGCityGroup.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABD51EF4E58D0012AF85 /* TGCitySearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABD41EF4E58D0012AF85 /* TGCitySearchResultController.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABD81EF4E8790012AF85 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABD71EF4E8790012AF85 /* UIView+AutoLayout.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABDB1EF4EC080012AF85 /* TGCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABDA1EF4EC080012AF85 /* TGCity.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABDE1EF4EC150012AF85 /* TGRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABDD1EF4EC150012AF85 /* TGRegion.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +128,14 @@
 		6C7AABCD1EF3D50E0012AF85 /* TGCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGCityViewController.xib; sourceTree = "<group>"; };
 		6C7AABD01EF3F9E60012AF85 /* TGCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCityGroup.h; sourceTree = "<group>"; };
 		6C7AABD11EF3F9E60012AF85 /* TGCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCityGroup.m; sourceTree = "<group>"; };
+		6C7AABD31EF4E58D0012AF85 /* TGCitySearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCitySearchResultController.h; sourceTree = "<group>"; };
+		6C7AABD41EF4E58D0012AF85 /* TGCitySearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCitySearchResultController.m; sourceTree = "<group>"; };
+		6C7AABD61EF4E8790012AF85 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		6C7AABD71EF4E8790012AF85 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
+		6C7AABD91EF4EC080012AF85 /* TGCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCity.h; sourceTree = "<group>"; };
+		6C7AABDA1EF4EC080012AF85 /* TGCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCity.m; sourceTree = "<group>"; };
+		6C7AABDC1EF4EC150012AF85 /* TGRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRegion.h; sourceTree = "<group>"; };
+		6C7AABDD1EF4EC150012AF85 /* TGRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRegion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +252,8 @@
 				6C7AABCB1EF3D50E0012AF85 /* TGCityViewController.h */,
 				6C7AABCC1EF3D50E0012AF85 /* TGCityViewController.m */,
 				6C7AABCD1EF3D50E0012AF85 /* TGCityViewController.xib */,
+				6C7AABD31EF4E58D0012AF85 /* TGCitySearchResultController.h */,
+				6C7AABD41EF4E58D0012AF85 /* TGCitySearchResultController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -251,6 +265,10 @@
 				6C7AAB671EF3BCF70012AF85 /* TGCategory.m */,
 				6C7AABD01EF3F9E60012AF85 /* TGCityGroup.h */,
 				6C7AABD11EF3F9E60012AF85 /* TGCityGroup.m */,
+				6C7AABD91EF4EC080012AF85 /* TGCity.h */,
+				6C7AABDA1EF4EC080012AF85 /* TGCity.m */,
+				6C7AABDC1EF4EC150012AF85 /* TGRegion.h */,
+				6C7AABDD1EF4EC150012AF85 /* TGRegion.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +306,8 @@
 		6C7AAB321EF120020012AF85 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				6C7AABD61EF4E8790012AF85 /* UIView+AutoLayout.h */,
+				6C7AABD71EF4E8790012AF85 /* UIView+AutoLayout.m */,
 				6C7AAB511EF130DF0012AF85 /* UIView+Extension.h */,
 				6C7AAB521EF130DF0012AF85 /* UIView+Extension.m */,
 				6C7AAB4E1EF12C6A0012AF85 /* UIBarButtonItem+Extension.h */,
@@ -514,12 +534,16 @@
 				6C7AABB71EF3BF460012AF85 /* MJType.m in Sources */,
 				6C7AAB5E1EF37A200012AF85 /* TGHomeDropDownMenu.m in Sources */,
 				6C7AABBA1EF3BF460012AF85 /* NSObject+MJKeyValue.m in Sources */,
+				6C7AABDE1EF4EC150012AF85 /* TGRegion.m in Sources */,
+				6C7AABD81EF4E8790012AF85 /* UIView+AutoLayout.m in Sources */,
 				6C7AABB61EF3BF460012AF85 /* MJIvar.m in Sources */,
+				6C7AABD51EF4E58D0012AF85 /* TGCitySearchResultController.m in Sources */,
 				6C7AAB501EF12C6A0012AF85 /* UIBarButtonItem+Extension.m in Sources */,
 				6C7AAB4A1EF124160012AF85 /* TGHomeViewController.m in Sources */,
 				6C7AAB471EF123F30012AF85 /* TGNavigationController.m in Sources */,
 				6C7AABC91EF3CC8C0012AF85 /* TGDistrictViewController.m in Sources */,
 				6C7AAB531EF130DF0012AF85 /* UIView+Extension.m in Sources */,
+				6C7AABDB1EF4EC080012AF85 /* TGCity.m in Sources */,
 				6C7AAB4D1EF124410012AF85 /* TGConst.m in Sources */,
 				6C7AABB51EF3BF460012AF85 /* MJFoundation.m in Sources */,
 				6C7AAB3B1EF120020012AF85 /* main.m in Sources */,
