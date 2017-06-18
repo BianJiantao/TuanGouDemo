@@ -12,8 +12,9 @@
 #import "TGHomeDropDownMenu.h"
 #import "TGCityViewController.h"
 #import "TGNavigationController.h"
+#import "TGRegion.h"
 
-@interface TGDistrictViewController ()
+@interface TGDistrictViewController ()<TGHomeDropDownMenuDataSource>
 - (IBAction)switchCity;
 
 @end
@@ -26,6 +27,7 @@
     UIView *title = [self.view.subviews firstObject];
     
     TGHomeDropDownMenu *dropDownMenu = [TGHomeDropDownMenu dropDownMenu];
+    dropDownMenu.dataSource = self;
     [self.view addSubview:dropDownMenu];
     dropDownMenu.y = CGRectGetMaxY(title.frame);
     
@@ -34,12 +36,41 @@
 }
 
 
-- (IBAction)switchCity {
-    
+- (IBAction)switchCity
+{
+    [self.pop dismissPopoverAnimated:YES];
     TGCityViewController *cityVc = [[TGCityViewController alloc] init];
     TGNavigationController *navCityVc = [[TGNavigationController alloc] initWithRootViewController:cityVc];
     navCityVc.modalPresentationStyle =  UIModalPresentationFormSheet;
-    [self presentViewController:navCityVc animated:YES completion:nil];
-
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:navCityVc animated:YES completion:nil];
+    
+    
 }
+
+-(void)dealloc
+{
+    NSLog(@"dealloc");
+}
+
+#pragma mark -TGHomeDropDownMenuDataSource 数据源方法
+
+-(NSInteger)numberOfRowsInMainTable:(TGHomeDropDownMenu *)homeDropDownMenu
+{
+    return self.regions.count;
+}
+
+-(NSString *)homeDropDownMenu:(TGHomeDropDownMenu *)homeDropDownMenu titleForRowInMainTable:(NSInteger)row
+{
+    TGRegion *region = self.regions[row];
+    return region.name;
+}
+
+-(NSArray *)homeDropDownMenu:(TGHomeDropDownMenu *)homeDropDownMenu subdataForRowInMainTable:(NSInteger)row
+{
+    TGRegion *region = self.regions[row];
+    return region.subregions;
+}
+
+
+
 @end

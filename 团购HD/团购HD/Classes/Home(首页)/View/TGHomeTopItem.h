@@ -23,4 +23,20 @@
  */
 -(void)addTarget:(id)target action:(SEL)action;
 
+/**
+ *  设置标题
+ */
+-(void)setTitle:(NSString *)title;
+/**
+*  设置子标题
+*/
+-(void)setSubTitle:(NSString *)subTitle;
+/**
+ *  设置按钮图标
+ */
+-(void)setIcon:(NSString *)icon highlightedIcon:(NSString *)highlightedIcon;
+
+
+
+
 @end

@@ -16,6 +16,7 @@
 #import "TGCityViewController.h"
 #import "TGCityGroup.h"
 #import "TGCitySearchResultController.h"
+#import "TGConst.h"
 
 
 @interface TGCityViewController () <UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
@@ -192,6 +193,17 @@
 {
    
     return  [self.cityGroups valueForKeyPath:@"title"];
+}
+
+#pragma mark -tableView 代理方法
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TGCityGroup *group = self.cityGroups[indexPath.section];
+    NSString *cityName = group.cities[indexPath.row];
+    
+    // 发出切换城市的通知
+    [NSTGNotificationCenter postNotificationName:NSCityDidChangeNotification object:nil userInfo:@{NSDidSelectCityName:cityName}];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /**

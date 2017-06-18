@@ -10,6 +10,7 @@
 
 #import "TGCitySearchResultController.h"
 #import "TGCity.h"
+#import "TGConst.h"
 
 @interface TGCitySearchResultController ()
 /**
@@ -67,6 +68,14 @@
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return [NSString stringWithFormat:@"共有%zd个搜索结果",self.searchResult.count];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TGCity *city = self.searchResult[indexPath.row];
+     // 发出切换城市的通知
+    [NSTGNotificationCenter postNotificationName:NSCityDidChangeNotification object:nil userInfo:@{NSDidSelectCityName:city.name}];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

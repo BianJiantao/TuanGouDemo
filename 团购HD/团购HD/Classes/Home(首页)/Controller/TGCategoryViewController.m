@@ -9,12 +9,13 @@
 #import "MJExtension.h"
 #import "UIView+Extension.h"
 
+#import "TGMetaTool.h"
 #import "TGCategoryViewController.h"
 #import "TGHomeDropDownMenu.h"
 #import "TGConst.h"
 #import "TGCategory.h"
 
-@interface TGCategoryViewController ()
+@interface TGCategoryViewController ()<TGHomeDropDownMenuDataSource>
 
 @end
 
@@ -23,10 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *categories = [TGCategory objectArrayWithFilename:@"categories.plist"];
-    
     TGHomeDropDownMenu *dropDownMenu = [TGHomeDropDownMenu dropDownMenu];
-    dropDownMenu.categories = categories;
+    dropDownMenu.dataSource = self;
     self.view = dropDownMenu;
     
     // 设置控制器在 popover 中的尺寸
@@ -43,5 +42,35 @@
 //    TGLog(@"%@",self.view);
 //    TGLog(@"preferredContentSize%@",NSStringFromCGSize(self.preferredContentSize));
 //}
+
+
+#pragma mark -TGHomeDropDownMenu 数据源方法
+-(NSInteger)numberOfRowsInMainTable:(TGHomeDropDownMenu *)homeDropDownMenu
+{
+    return [TGMetaTool categories].count;
+}
+
+-(NSString *)homeDropDownMenu:(TGHomeDropDownMenu *)homeDropDownMenu titleForRowInMainTable:(NSInteger)row
+{
+    TGCategory *category = [TGMetaTool categories][row];
+    return category.name;
+}
+-(NSArray *)homeDropDownMenu:(TGHomeDropDownMenu *)homeDropDownMenu subdataForRowInMainTable:(NSInteger)row
+{
+    TGCategory *category = [TGMetaTool categories][row];
+    return category.subcategories;
+}
+
+-(NSString *)homeDropDownMenu:(TGHomeDropDownMenu *)homeDropDownMenu iconForRowInMainTable:(NSInteger)row
+{
+    TGCategory *category = [TGMetaTool categories][row];
+    return category.small_icon;
+}
+-(NSString *)homeDropDownMenu:(TGHomeDropDownMenu *)homeDropDownMenu highLightedIconForRowInMainTable:(NSInteger)row
+{
+    TGCategory *category = [TGMetaTool categories][row];
+    return category.small_highlighted_icon;
+}
+
 
 @end

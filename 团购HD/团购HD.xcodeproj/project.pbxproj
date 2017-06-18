@@ -45,6 +45,7 @@
 		6C7AABD81EF4E8790012AF85 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABD71EF4E8790012AF85 /* UIView+AutoLayout.m */; settings = {ASSET_TAGS = (); }; };
 		6C7AABDB1EF4EC080012AF85 /* TGCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABDA1EF4EC080012AF85 /* TGCity.m */; settings = {ASSET_TAGS = (); }; };
 		6C7AABDE1EF4EC150012AF85 /* TGRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABDD1EF4EC150012AF85 /* TGRegion.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABE21EF663000012AF85 /* TGMetaTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABE11EF663000012AF85 /* TGMetaTool.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,8 @@
 		6C7AABDA1EF4EC080012AF85 /* TGCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCity.m; sourceTree = "<group>"; };
 		6C7AABDC1EF4EC150012AF85 /* TGRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRegion.h; sourceTree = "<group>"; };
 		6C7AABDD1EF4EC150012AF85 /* TGRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRegion.m; sourceTree = "<group>"; };
+		6C7AABE01EF663000012AF85 /* TGMetaTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaTool.h; sourceTree = "<group>"; };
+		6C7AABE11EF663000012AF85 /* TGMetaTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +235,7 @@
 		6C7AAB2D1EF120020012AF85 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				6C7AABDF1EF662DC0012AF85 /* Tool */,
 				6C7AAB2F1EF120020012AF85 /* Model */,
 				6C7AAB301EF120020012AF85 /* View */,
 				6C7AAB2E1EF120020012AF85 /* Controller */,
@@ -390,6 +394,15 @@
 				6C7AABB31EF3BF460012AF85 /* NSObject+MJKeyValue.m */,
 			);
 			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		6C7AABDF1EF662DC0012AF85 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AABE01EF663000012AF85 /* TGMetaTool.h */,
+				6C7AABE11EF663000012AF85 /* TGMetaTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,6 +569,7 @@
 				6C7AABCE1EF3D50E0012AF85 /* TGCityViewController.m in Sources */,
 				6C7AABD21EF3F9E60012AF85 /* TGCityGroup.m in Sources */,
 				6C7AAB681EF3BCF70012AF85 /* TGCategory.m in Sources */,
+				6C7AABE21EF663000012AF85 /* TGMetaTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

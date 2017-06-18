@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class TGRegion;
 @interface TGDistrictViewController : UIViewController
+/**
+ *  一个城市的 regions
+ */
+@property (nonatomic,strong) NSArray<TGRegion *> *regions;
+/**
+ *  the pop which initWithContentViewController: self
+ *  以便于在该控制器中,可以操纵 pop
+ */
+@property (nonatomic,weak) UIPopoverController *pop;
 
 @end

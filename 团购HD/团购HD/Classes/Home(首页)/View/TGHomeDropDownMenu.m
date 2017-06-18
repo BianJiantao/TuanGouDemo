@@ -7,7 +7,6 @@
 //
 
 #import "TGHomeDropDownMenu.h"
-#import "TGCategory.h"
 #import "TGHomeDropDownMainCell.h"
 #import "TGHomeDropDownSubCell.h"
 
@@ -24,9 +23,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *subTable;
 
 /**
- *  当前主表选中的分类
+ *  当前主表选中的行号
  */
-@property (nonatomic,weak) TGCategory *selectedCategory;
+@property (nonatomic,assign) NSInteger selectedRowInMainTable;
 
 @end
 
@@ -47,9 +46,9 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.mainTable) {
-        return self.categories.count;
+        return [self.dataSource numberOfRowsInMainTable:self];
     }else{
-        return self.selectedCategory.subcategories.count;
+        return [self.dataSource homeDropDownMenu:self subdataForRowInMainTable: self.selectedRowInMainTable].count;
     }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,10 +57,19 @@
     if(tableView == self.mainTable){  // 主表
         
         cell = [TGHomeDropDownMainCell cellWithTableView:tableView];
-        TGCategory *category = self.categories[indexPath.row];
-        cell.textLabel.text = category.name;
-        cell.imageView.image = [UIImage imageNamed:category.small_icon];
-        if (category.subcategories) {
+        cell.textLabel.text = [self.dataSource homeDropDownMenu:self titleForRowInMainTable:indexPath.row];
+        
+        // 如果实现了图标数据源方法
+        if ([self.dataSource respondsToSelector:@selector(homeDropDownMenu:iconForRowInMainTable:)]) {
+           NSString *icon = [self.dataSource homeDropDownMenu:self iconForRowInMainTable:indexPath.row];
+            cell.imageView.image = [UIImage imageNamed:icon];
+        }
+        if ([self.dataSource respondsToSelector:@selector(homeDropDownMenu:highLightedIconForRowInMainTable:)]) {
+            NSString *highIcon = [self.dataSource homeDropDownMenu:self highLightedIconForRowInMainTable:indexPath.row];
+            cell.imageView.highlightedImage = [UIImage imageNamed:highIcon];
+        }
+        
+        if ([self.dataSource homeDropDownMenu:self subdataForRowInMainTable:self.selectedRowInMainTable].count) {
             // 设置 cell 右侧箭头
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }else{
@@ -71,7 +79,8 @@
     }else{  // 从表
         
         cell = [TGHomeDropDownSubCell cellWithTableView:tableView];
-        cell.textLabel.text = self.selectedCategory.subcategories[indexPath.row];
+        NSArray *subdata = [self.dataSource homeDropDownMenu:self subdataForRowInMainTable:self.selectedRowInMainTable];
+        cell.textLabel.text = subdata[indexPath.row];
         
     }
     
@@ -83,8 +92,8 @@
 {
     if(tableView == self.mainTable){
         
-        // 设置当前选中分类
-        self.selectedCategory = self.categories[indexPath.row];
+        // 设置当前主表选中的行号
+        self.selectedRowInMainTable = indexPath.row;
         // 刷新从表数据
         [self.subTable reloadData];
     }

@@ -10,11 +10,13 @@
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
 
+#import "TGMetaTool.h"
 #import "TGHomeViewController.h"
 #import "TGConst.h"
 #import "TGHomeTopItem.h"
 #import "TGCategoryViewController.h"
 #import "TGDistrictViewController.h"
+#import "TGCity.h"
 
 @interface TGHomeViewController ()
 
@@ -30,6 +32,15 @@
  *  排序
  */
 @property (nonatomic,weak) UIBarButtonItem *sortItem;
+/**
+ *  当前选中的城市名字
+ */
+@property (nonatomic,copy) NSString *selectedCityName;
+
+/**
+ *  区域PopoverController
+ */
+@property (nonatomic,strong) UIPopoverController *districtPopover;
 
 @end
 
@@ -43,6 +54,11 @@ static NSString * const reuseIdentifier = @"Cell";
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     
     return  [super initWithCollectionViewLayout:flowLayout];
+}
+
+-(void)dealloc
+{
+    [NSTGNotificationCenter removeObserver:self];
 }
 
 - (void)viewDidLoad {
@@ -60,6 +76,8 @@ static NSString * const reuseIdentifier = @"Cell";
     [self setupNavBarLeft];
     // 设置导航条右侧内容
     [self setupNavBarRight];
+    
+    [NSTGNotificationCenter addObserver:self selector:@selector(cityDidChange:) name:NSCityDidChangeNotification object:nil];
     
 }
 /**
@@ -80,6 +98,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 3. 地区
     TGHomeTopItem *districtTopItem = [TGHomeTopItem item];
+    [districtTopItem setIcon:@"icon_district" highlightedIcon:@"icon_district_highlighted"];
     [districtTopItem addTarget:self action:@selector(districtDidClick)];
     UIBarButtonItem *districtItem = [[UIBarButtonItem alloc] initWithCustomView:districtTopItem];
     self.districtItem = districtItem;
@@ -126,8 +145,19 @@ static NSString * const reuseIdentifier = @"Cell";
  */
 -(void)districtDidClick
 {
-    UIPopoverController *pop = [[UIPopoverController alloc] initWithContentViewController:[[TGDistrictViewController alloc] init]];
-    [pop presentPopoverFromBarButtonItem:self.districtItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    TGDistrictViewController *districtVc = [[TGDistrictViewController alloc] init];
+    self.districtPopover = [[UIPopoverController alloc] initWithContentViewController:districtVc];
+    [self.districtPopover presentPopoverFromBarButtonItem:self.districtItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+     if(self.selectedCityName.length)
+     {
+         // 通过当前选中的城市名字找出对应的城市模型
+         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@",self.selectedCityName];
+         TGCity *city = [[[TGMetaTool cities] filteredArrayUsingPredicate:predicate] firstObject];
+         districtVc.regions = city.regions;
+         
+     }
+    // 以便于在 districtVc 控制器中,可以 dismiss pop
+    districtVc.pop = self.districtPopover;
 }
 
 /**
@@ -138,6 +168,19 @@ static NSString * const reuseIdentifier = @"Cell";
     TGLog(@"--");
 }
 
+
+#pragma mark -通知监听方法
+-(void)cityDidChange:(NSNotification *)noti
+{
+//    TGLog(@"%@",noti.userInfo[NSDidSelectCityName]);
+    NSString *cityName = noti.userInfo[NSDidSelectCityName];
+    self.selectedCityName = cityName;
+    
+    TGHomeTopItem *top = (TGHomeTopItem *)self.districtItem.customView;
+    [top setTitle:[NSString stringWithFormat:@"%@ - 全部",cityName]];
+    [top setSubTitle:nil];
+
+}
 
 /*
 #pragma mark - Navigation

@@ -12,7 +12,7 @@
 
 /** 这组的标题 */
 @property (nonatomic, copy) NSString *title;
-/** 这组的所有城市 */
+/** 这组的所有城市名字 (字符串) */
 @property (nonatomic, strong) NSArray *cities;
 
 @end
