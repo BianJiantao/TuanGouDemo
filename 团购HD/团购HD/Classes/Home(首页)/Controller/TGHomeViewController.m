@@ -17,6 +17,10 @@
 #import "TGCategoryViewController.h"
 #import "TGDistrictViewController.h"
 #import "TGCity.h"
+#import "TGCategory.h"
+#import "TGRegion.h"
+#import "TGSortViewController.h"
+#import "TGSort.h"
 
 @interface TGHomeViewController ()
 
@@ -38,9 +42,17 @@
 @property (nonatomic,copy) NSString *selectedCityName;
 
 /**
+ *  分类PopoverController
+ */
+@property (nonatomic,strong) UIPopoverController * categoryPopover;
+/**
  *  区域PopoverController
  */
 @property (nonatomic,strong) UIPopoverController *districtPopover;
+/**
+ *  排序PopoverController
+ */
+@property (nonatomic,strong) UIPopoverController * sortPopover;
 
 @end
 
@@ -58,7 +70,7 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(void)dealloc
 {
-    [NSTGNotificationCenter removeObserver:self];
+    [TGNotificationCenter removeObserver:self];
 }
 
 - (void)viewDidLoad {
@@ -77,9 +89,17 @@ static NSString * const reuseIdentifier = @"Cell";
     // 设置导航条右侧内容
     [self setupNavBarRight];
     
-    [NSTGNotificationCenter addObserver:self selector:@selector(cityDidChange:) name:NSCityDidChangeNotification object:nil];
-    
+    // 监听城市切换
+    [TGNotificationCenter addObserver:self selector:@selector(cityDidChange:) name:TGCityDidChangeNotification object:nil];
+    // 监听分类切换
+    [TGNotificationCenter addObserver:self selector:@selector(categoryDidChange:) name:TGCategoryDidChangeNotification object:nil];
+    // 监听区域切换
+    [TGNotificationCenter addObserver:self selector:@selector(regionDidChange:) name:TGRegionDidChangeNotification object:nil];
+    // 监听排序切换
+    [TGNotificationCenter addObserver:self selector:@selector( sortDidChange:) name:TGSortDidChangeNotification object:nil];
 }
+
+#pragma mark - 设置导航栏内容
 /**
  *  设置导航条左侧内容
  */
@@ -105,6 +125,8 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 4. 排序
     TGHomeTopItem *sortTopItem = [TGHomeTopItem item];
+    [sortTopItem setIcon:@"icon_sort" highlightedIcon:@"icon_sort_highlighted"];
+    [sortTopItem setTitle:@"排序"];
     [sortTopItem addTarget:self action:@selector(sortDidClick)];
     UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithCustomView:sortTopItem];
     self.sortItem = sortItem;
@@ -135,8 +157,8 @@ static NSString * const reuseIdentifier = @"Cell";
  */
 -(void)categoryDidClick
 {
-    UIPopoverController *pop = [[UIPopoverController alloc] initWithContentViewController:[[TGCategoryViewController alloc] init]];
-    [pop presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    self.categoryPopover = [[UIPopoverController alloc] initWithContentViewController:[[TGCategoryViewController alloc] init]];
+    [self.categoryPopover presentPopoverFromBarButtonItem:self.categoryItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     
 }
 
@@ -165,22 +187,73 @@ static NSString * const reuseIdentifier = @"Cell";
  */
 -(void)sortDidClick
 {
-    TGLog(@"--");
+    self.sortPopover = [[UIPopoverController alloc] initWithContentViewController:[[TGSortViewController alloc] init]];
+    [self.sortPopover presentPopoverFromBarButtonItem:self.sortItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    
 }
 
 
 #pragma mark -通知监听方法
+/**
+ *  城市改变
+ */
 -(void)cityDidChange:(NSNotification *)noti
 {
 //    TGLog(@"%@",noti.userInfo[NSDidSelectCityName]);
-    NSString *cityName = noti.userInfo[NSDidSelectCityName];
+    NSString *cityName = noti.userInfo[TGSelectCityName];
     self.selectedCityName = cityName;
-    
+     // 1.更换顶部item的文字
     TGHomeTopItem *top = (TGHomeTopItem *)self.districtItem.customView;
     [top setTitle:[NSString stringWithFormat:@"%@ - 全部",cityName]];
     [top setSubTitle:nil];
 
 }
+/**
+ *  分类改变
+ */
+-(void)categoryDidChange:(NSNotification *)noti
+{
+    TGCategory *category = noti.userInfo[TGSelectCategory];
+    NSString *subcategoryName = noti.userInfo[TGSelectSubCategoryName];
+     // 更换顶部item的文字
+    TGHomeTopItem *top = (TGHomeTopItem *)self.categoryItem.customView;
+    [top setTitle:category.name];
+    [top setIcon:category.icon highlightedIcon:category.highlighted_icon];
+    [top setSubTitle:subcategoryName];
+    // 关闭 popover
+    [self.categoryPopover dismissPopoverAnimated:YES];
+    
+}
+/**
+ *  区域改变
+ */
+-(void)regionDidChange:(NSNotification *)noti
+{
+    TGRegion *region = noti.userInfo[TGSelectRegion];
+    NSString *subregionName = noti.userInfo[TGSelectSubRegionName];
+     // 更换顶部item的文字
+    TGHomeTopItem *top = (TGHomeTopItem *)self.districtItem.customView;
+    [top setTitle:[NSString stringWithFormat:@"%@-%@",self.selectedCityName,region.name]];
+    [top setSubTitle:subregionName];
+    // 关闭 popover
+    [self.districtPopover dismissPopoverAnimated:YES];
+    
+}
+/**
+ *  排序改变
+ */
+-(void)sortDidChange:(NSNotification *)noti
+{
+    TGSort *sort = noti.userInfo[TGSelectSort];
+    // 更换顶部item的文字
+    TGHomeTopItem *top = (TGHomeTopItem *)self.sortItem.customView;
+    [top setSubTitle:sort.label];
+    // 关闭 popover
+    [self.sortPopover dismissPopoverAnimated:YES];
+    
+}
+
+
 
 /*
 #pragma mark - Navigation

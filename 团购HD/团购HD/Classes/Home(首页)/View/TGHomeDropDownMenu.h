@@ -36,12 +36,34 @@
 
 @end
 
+@protocol TGHomeDropDownMenuDelegate <NSObject>
+@optional
+/**
+ *  左侧主表选中某一行 (optional)
+ */
+-(void)homeDropDownMenu:(TGHomeDropDownMenu *)homeDropDownMenu didSelectRowInMainTable:(NSInteger)row;
+
+
+/**
+ *  右侧从表选中某一行 (optional)
+ *  @param subRow           选中从表的行号
+ *  @param mainRow          选中的从表对应的主表行号
+ */
+-(void)homeDropDownMenu:(TGHomeDropDownMenu *)homeDropDownMenu didSelectRowInSubTable:(NSInteger)subRow forMainTableRow:(NSInteger)mainRow;
+
+@end
+
+
 @interface TGHomeDropDownMenu : UIView
 
 /**
  *  下拉菜单的数据源
  */
 @property (nonatomic,weak) id<TGHomeDropDownMenuDataSource> dataSource;
+/**
+ *  下拉菜单的代理
+ */
+@property (nonatomic,weak) id<TGHomeDropDownMenuDelegate> delegate;
 
 +(instancetype)dropDownMenu;
 

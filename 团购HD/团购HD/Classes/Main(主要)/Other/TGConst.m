@@ -7,5 +7,17 @@
 //
 #import <Foundation/Foundation.h>
 
-NSString *const NSCityDidChangeNotification = @"NSCityDidChangeNotification";
-NSString *const NSDidSelectCityName = @"NSDidSelectCityName";
+NSString *const TGCityDidChangeNotification = @"TGCityDidChangeNotification";
+NSString *const TGSelectCityName = @"TGSelectCityName";
+
+NSString *const TGCategoryDidChangeNotification = @"TGCategoryDidChangeNotification";
+NSString *const TGSelectCategory = @"TGSelectCategory";
+NSString *const TGSelectSubCategoryName = @"TGSelectSubCategoryName";
+
+NSString *const TGRegionDidChangeNotification = @"TGRegionDidChangeNotification";
+NSString *const TGSelectRegion = @"TGSelectRegion";
+NSString *const TGSelectSubRegionName = @"TGSelectSubRegionName";
+
+
+NSString *const TGSortDidChangeNotification = @"TGSortDidChangeNotification";
+NSString *const TGSelectSort = @"TGSelectSort";

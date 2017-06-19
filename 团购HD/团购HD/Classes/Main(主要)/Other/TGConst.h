@@ -17,12 +17,47 @@
 #define kTGColorRandom kTGColorRGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
 
-#define NSTGNotificationCenter [NSNotificationCenter defaultCenter]
+#define TGNotificationCenter [NSNotificationCenter defaultCenter]
 /**
  *  切换城市的通知
  */
-extern NSString *const NSCityDidChangeNotification;
+extern NSString *const TGCityDidChangeNotification;
 /**
- *  切换的城市名字
+ *  切换的城市名字 (key)
  */
-extern NSString *const NSDidSelectCityName;
+extern NSString *const TGSelectCityName;
+
+/**
+ *  切换分类的通知
+ */
+extern NSString *const TGCategoryDidChangeNotification;
+/**
+ *  切换的分类 (key)
+ */
+extern NSString *const TGSelectCategory;
+/**
+ *  切换的子分类名称 (key)
+ */
+extern NSString *const TGSelectSubCategoryName;
+
+/**
+ *  切换区域的通知
+ */
+extern NSString *const TGRegionDidChangeNotification;
+/**
+ *  切换的区域 (key)
+ */
+extern NSString *const TGSelectRegion;
+/**
+ *  切换的子区域名称 (key)
+ */
+extern NSString *const TGSelectSubRegionName;
+
+/**
+ *  切换排序的通知
+ */
+extern NSString *const TGSortDidChangeNotification;
+/**
+ *  切换的排序 (key)
+ */
+extern NSString *const TGSelectSort;

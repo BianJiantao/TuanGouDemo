@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class TGCategory,TGCity;
+@class TGCategory,TGCity,TGSort;
 @interface TGMetaTool : NSObject
 
 /**
@@ -20,5 +20,10 @@
  *  获取所有的城市数据 (cities.plist)
  */
 +(NSArray <TGCity *> *)cities;
+
+/**
+ *  获取所有的排序数据 (sorts.plist)
+ */
++(NSArray<TGSort *> *)sorts;
 
 @end

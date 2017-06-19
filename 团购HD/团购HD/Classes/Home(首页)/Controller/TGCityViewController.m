@@ -202,7 +202,7 @@
     NSString *cityName = group.cities[indexPath.row];
     
     // 发出切换城市的通知
-    [NSTGNotificationCenter postNotificationName:NSCityDidChangeNotification object:nil userInfo:@{NSDidSelectCityName:cityName}];
+    [TGNotificationCenter postNotificationName:TGCityDidChangeNotification object:nil userInfo:@{TGSelectCityName:cityName}];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -15,7 +15,7 @@
 #import "TGConst.h"
 #import "TGCategory.h"
 
-@interface TGCategoryViewController ()<TGHomeDropDownMenuDataSource>
+@interface TGCategoryViewController ()<TGHomeDropDownMenuDataSource,TGHomeDropDownMenuDelegate>
 
 @end
 
@@ -26,6 +26,7 @@
     
     TGHomeDropDownMenu *dropDownMenu = [TGHomeDropDownMenu dropDownMenu];
     dropDownMenu.dataSource = self;
+    dropDownMenu.delegate  = self;
     self.view = dropDownMenu;
     
     // 设置控制器在 popover 中的尺寸
@@ -44,7 +45,7 @@
 //}
 
 
-#pragma mark -TGHomeDropDownMenu 数据源方法
+#pragma mark -TGHomeDropDownMenuDataSource 数据源方法
 -(NSInteger)numberOfRowsInMainTable:(TGHomeDropDownMenu *)homeDropDownMenu
 {
     return [TGMetaTool categories].count;
@@ -72,5 +73,23 @@
     return category.small_highlighted_icon;
 }
 
+#pragma mark -TGHomeDropDownMenuDelegate  代理方法
+
+-(void)homeDropDownMenu:(TGHomeDropDownMenu *)homeDropDownMenu didSelectRowInMainTable:(NSInteger)row
+{
+    TGCategory *category = [TGMetaTool categories][row];
+    if (category.subcategories.count == 0) { // 没有子分类
+        
+        // 发出切换分类的通知
+        [TGNotificationCenter postNotificationName:TGCategoryDidChangeNotification object:nil userInfo:@{TGSelectCategory:category}];
+    }
+}
+
+-(void)homeDropDownMenu:(TGHomeDropDownMenu *)homeDropDownMenu didSelectRowInSubTable:(NSInteger)subRow forMainTableRow:(NSInteger)mainRow
+{
+    TGCategory *category = [TGMetaTool categories][mainRow];
+    NSString *subcategoryName = category.subcategories[subRow];
+    [TGNotificationCenter postNotificationName:TGCategoryDidChangeNotification object:nil userInfo:@{TGSelectCategory:category,TGSelectSubCategoryName:subcategoryName}];
+}
 
 @end

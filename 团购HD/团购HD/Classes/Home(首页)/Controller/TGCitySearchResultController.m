@@ -74,7 +74,7 @@
 {
     TGCity *city = self.searchResult[indexPath.row];
      // 发出切换城市的通知
-    [NSTGNotificationCenter postNotificationName:NSCityDidChangeNotification object:nil userInfo:@{NSDidSelectCityName:city.name}];
+    [TGNotificationCenter postNotificationName:TGCityDidChangeNotification object:nil userInfo:@{TGSelectCityName:city.name}];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

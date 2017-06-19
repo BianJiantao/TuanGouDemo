@@ -69,7 +69,8 @@
             cell.imageView.highlightedImage = [UIImage imageNamed:highIcon];
         }
         
-        if ([self.dataSource homeDropDownMenu:self subdataForRowInMainTable:self.selectedRowInMainTable].count) {
+        NSInteger count = [self.dataSource homeDropDownMenu:self subdataForRowInMainTable:indexPath.row].count;
+        if (count) {
             // 设置 cell 右侧箭头
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }else{
@@ -96,8 +97,19 @@
         self.selectedRowInMainTable = indexPath.row;
         // 刷新从表数据
         [self.subTable reloadData];
+        
+        if([self.delegate respondsToSelector:@selector(homeDropDownMenu:didSelectRowInMainTable:)]){
+            // 通知代理主表某一行被点击了
+            [self.delegate homeDropDownMenu:self didSelectRowInMainTable:indexPath.row];
+        }
+        
+    }else{
+        
+        if ([self.delegate respondsToSelector:@selector(homeDropDownMenu:didSelectRowInSubTable:forMainTableRow:)]) {
+            // 通知代理从表某一行被点击了
+            [self.delegate homeDropDownMenu:self didSelectRowInSubTable:indexPath.row forMainTableRow:self.selectedRowInMainTable];
+        }
     }
 }
-
 
 @end

@@ -10,6 +10,7 @@
 #import "MJExtension.h"
 #import "TGCategory.h"
 #import "TGCity.h"
+#import "TGSort.h"
 
 @implementation TGMetaTool
 
@@ -32,6 +33,16 @@ static NSArray *_cities;
         _cities = [TGCity objectArrayWithFilename:@"cities.plist"];
     }
     return _cities;
+}
+
+static NSArray *_sorts;
++(NSArray<TGSort *> *)sorts
+{
+    if (_sorts == nil) {
+        
+        _sorts = [TGSort objectArrayWithFilename:@"sorts.plist"];
+    }
+    return _sorts;
 }
 
 @end

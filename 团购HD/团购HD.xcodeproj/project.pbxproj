@@ -46,6 +46,8 @@
 		6C7AABDB1EF4EC080012AF85 /* TGCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABDA1EF4EC080012AF85 /* TGCity.m */; settings = {ASSET_TAGS = (); }; };
 		6C7AABDE1EF4EC150012AF85 /* TGRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABDD1EF4EC150012AF85 /* TGRegion.m */; settings = {ASSET_TAGS = (); }; };
 		6C7AABE21EF663000012AF85 /* TGMetaTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABE11EF663000012AF85 /* TGMetaTool.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABE51EF76EDE0012AF85 /* TGSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABE41EF76EDE0012AF85 /* TGSortViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABE81EF770FB0012AF85 /* TGSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABE71EF770FB0012AF85 /* TGSort.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,10 @@
 		6C7AABDD1EF4EC150012AF85 /* TGRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRegion.m; sourceTree = "<group>"; };
 		6C7AABE01EF663000012AF85 /* TGMetaTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaTool.h; sourceTree = "<group>"; };
 		6C7AABE11EF663000012AF85 /* TGMetaTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaTool.m; sourceTree = "<group>"; };
+		6C7AABE31EF76EDE0012AF85 /* TGSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSortViewController.h; sourceTree = "<group>"; };
+		6C7AABE41EF76EDE0012AF85 /* TGSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSortViewController.m; sourceTree = "<group>"; };
+		6C7AABE61EF770FB0012AF85 /* TGSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSort.h; sourceTree = "<group>"; };
+		6C7AABE71EF770FB0012AF85 /* TGSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSort.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +259,8 @@
 				6C7AABC61EF3CC8C0012AF85 /* TGDistrictViewController.h */,
 				6C7AABC71EF3CC8C0012AF85 /* TGDistrictViewController.m */,
 				6C7AABC81EF3CC8C0012AF85 /* TGDistrictViewController.xib */,
+				6C7AABE31EF76EDE0012AF85 /* TGSortViewController.h */,
+				6C7AABE41EF76EDE0012AF85 /* TGSortViewController.m */,
 				6C7AABCB1EF3D50E0012AF85 /* TGCityViewController.h */,
 				6C7AABCC1EF3D50E0012AF85 /* TGCityViewController.m */,
 				6C7AABCD1EF3D50E0012AF85 /* TGCityViewController.xib */,
@@ -273,6 +281,8 @@
 				6C7AABDA1EF4EC080012AF85 /* TGCity.m */,
 				6C7AABDC1EF4EC150012AF85 /* TGRegion.h */,
 				6C7AABDD1EF4EC150012AF85 /* TGRegion.m */,
+				6C7AABE61EF770FB0012AF85 /* TGSort.h */,
+				6C7AABE71EF770FB0012AF85 /* TGSort.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -560,6 +570,7 @@
 				6C7AAB4D1EF124410012AF85 /* TGConst.m in Sources */,
 				6C7AABB51EF3BF460012AF85 /* MJFoundation.m in Sources */,
 				6C7AAB3B1EF120020012AF85 /* main.m in Sources */,
+				6C7AABE81EF770FB0012AF85 /* TGSort.m in Sources */,
 				6C7AABC01EF3C2C70012AF85 /* TGHomeDropDownSubCell.m in Sources */,
 				6C7AABBD1EF3C2B90012AF85 /* TGHomeDropDownMainCell.m in Sources */,
 				6C7AAB3A1EF120020012AF85 /* AppDelegate.m in Sources */,
@@ -570,6 +581,7 @@
 				6C7AABD21EF3F9E60012AF85 /* TGCityGroup.m in Sources */,
 				6C7AAB681EF3BCF70012AF85 /* TGCategory.m in Sources */,
 				6C7AABE21EF663000012AF85 /* TGMetaTool.m in Sources */,
+				6C7AABE51EF76EDE0012AF85 /* TGSortViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
