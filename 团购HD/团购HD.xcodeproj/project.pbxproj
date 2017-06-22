@@ -48,6 +48,9 @@
 		6C7AABE21EF663000012AF85 /* TGMetaTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABE11EF663000012AF85 /* TGMetaTool.m */; settings = {ASSET_TAGS = (); }; };
 		6C7AABE51EF76EDE0012AF85 /* TGSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABE41EF76EDE0012AF85 /* TGSortViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6C7AABE81EF770FB0012AF85 /* TGSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABE71EF770FB0012AF85 /* TGSort.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABEF1EF91CD50012AF85 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABEB1EF91CD50012AF85 /* DPAPI.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABF01EF91CD50012AF85 /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABEE1EF91CD50012AF85 /* DPRequest.m */; settings = {ASSET_TAGS = (); }; };
+		6C7AABF21EFA34BD0012AF85 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7AABF11EFA34BD0012AF85 /* Foundation+Log.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +148,12 @@
 		6C7AABE41EF76EDE0012AF85 /* TGSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSortViewController.m; sourceTree = "<group>"; };
 		6C7AABE61EF770FB0012AF85 /* TGSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSort.h; sourceTree = "<group>"; };
 		6C7AABE71EF770FB0012AF85 /* TGSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSort.m; sourceTree = "<group>"; };
+		6C7AABEA1EF91CD50012AF85 /* DPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAPI.h; sourceTree = "<group>"; };
+		6C7AABEB1EF91CD50012AF85 /* DPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAPI.m; sourceTree = "<group>"; };
+		6C7AABEC1EF91CD50012AF85 /* DPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPConstants.h; sourceTree = "<group>"; };
+		6C7AABED1EF91CD50012AF85 /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
+		6C7AABEE1EF91CD50012AF85 /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
+		6C7AABF11EFA34BD0012AF85 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +329,7 @@
 		6C7AAB321EF120020012AF85 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				6C7AABF11EFA34BD0012AF85 /* Foundation+Log.m */,
 				6C7AABD61EF4E8790012AF85 /* UIView+AutoLayout.h */,
 				6C7AABD71EF4E8790012AF85 /* UIView+AutoLayout.m */,
 				6C7AAB511EF130DF0012AF85 /* UIView+Extension.h */,
@@ -379,6 +389,7 @@
 		6C7AAB691EF3BD880012AF85 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				6C7AABE91EF91CD50012AF85 /* dianpingapi */,
 				6C7AABA41EF3BF460012AF85 /* MJExtension */,
 			);
 			path = Lib;
@@ -413,6 +424,18 @@
 				6C7AABE11EF663000012AF85 /* TGMetaTool.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		6C7AABE91EF91CD50012AF85 /* dianpingapi */ = {
+			isa = PBXGroup;
+			children = (
+				6C7AABEA1EF91CD50012AF85 /* DPAPI.h */,
+				6C7AABEB1EF91CD50012AF85 /* DPAPI.m */,
+				6C7AABEC1EF91CD50012AF85 /* DPConstants.h */,
+				6C7AABED1EF91CD50012AF85 /* DPRequest.h */,
+				6C7AABEE1EF91CD50012AF85 /* DPRequest.m */,
+			);
+			path = dianpingapi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,7 +578,9 @@
 				6C7AABB91EF3BF460012AF85 /* NSObject+MJIvar.m in Sources */,
 				6C7AAB561EF1346F0012AF85 /* TGHomeTopItem.m in Sources */,
 				6C7AABB71EF3BF460012AF85 /* MJType.m in Sources */,
+				6C7AABF01EF91CD50012AF85 /* DPRequest.m in Sources */,
 				6C7AAB5E1EF37A200012AF85 /* TGHomeDropDownMenu.m in Sources */,
+				6C7AABF21EFA34BD0012AF85 /* Foundation+Log.m in Sources */,
 				6C7AABBA1EF3BF460012AF85 /* NSObject+MJKeyValue.m in Sources */,
 				6C7AABDE1EF4EC150012AF85 /* TGRegion.m in Sources */,
 				6C7AABD81EF4E8790012AF85 /* UIView+AutoLayout.m in Sources */,
@@ -569,6 +594,7 @@
 				6C7AABDB1EF4EC080012AF85 /* TGCity.m in Sources */,
 				6C7AAB4D1EF124410012AF85 /* TGConst.m in Sources */,
 				6C7AABB51EF3BF460012AF85 /* MJFoundation.m in Sources */,
+				6C7AABEF1EF91CD50012AF85 /* DPAPI.m in Sources */,
 				6C7AAB3B1EF120020012AF85 /* main.m in Sources */,
 				6C7AABE81EF770FB0012AF85 /* TGSort.m in Sources */,
 				6C7AABC01EF3C2C70012AF85 /* TGHomeDropDownSubCell.m in Sources */,

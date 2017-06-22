@@ -6,6 +6,7 @@
 //  Copyright © 2017年 BJT. All rights reserved.
 //
 
+#import "DPAPI.h"
 
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
@@ -22,7 +23,7 @@
 #import "TGSortViewController.h"
 #import "TGSort.h"
 
-@interface TGHomeViewController ()
+@interface TGHomeViewController ()<DPRequestDelegate>
 
 /**
  *  分类
@@ -36,10 +37,25 @@
  *  排序
  */
 @property (nonatomic,weak) UIBarButtonItem *sortItem;
+
 /**
  *  当前选中的城市名字
  */
 @property (nonatomic,copy) NSString *selectedCityName;
+/**
+ *  当前选中的分类名字
+ */
+@property (nonatomic,copy) NSString *selectedCategoryName;
+/**
+ *  当前选中的区域名字
+ */
+@property (nonatomic,copy) NSString *selectedRegionName;
+/**
+ *  当前选中的排序
+ */
+@property (nonatomic,strong) TGSort *selectedSort;
+
+
 
 /**
  *  分类PopoverController
@@ -206,6 +222,9 @@ static NSString * const reuseIdentifier = @"Cell";
     TGHomeTopItem *top = (TGHomeTopItem *)self.districtItem.customView;
     [top setTitle:[NSString stringWithFormat:@"%@ - 全部",cityName]];
     [top setSubTitle:nil];
+    
+    // 从服务器获取数据,刷新view
+    [self loadNewDeals];
 
 }
 /**
@@ -215,6 +234,16 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     TGCategory *category = noti.userInfo[TGSelectCategory];
     NSString *subcategoryName = noti.userInfo[TGSelectSubCategoryName];
+    
+    if(subcategoryName == nil || [subcategoryName isEqualToString:@"全部"]){
+        
+        self.selectedCategoryName = [category.name isEqualToString:@"全部分类"]?nil:category.name;
+        
+    }else{
+        
+        self.selectedCategoryName = subcategoryName;
+    }
+    
      // 更换顶部item的文字
     TGHomeTopItem *top = (TGHomeTopItem *)self.categoryItem.customView;
     [top setTitle:category.name];
@@ -222,6 +251,9 @@ static NSString * const reuseIdentifier = @"Cell";
     [top setSubTitle:subcategoryName];
     // 关闭 popover
     [self.categoryPopover dismissPopoverAnimated:YES];
+    
+    // 从服务器获取数据,刷新view
+    [self loadNewDeals];
     
 }
 /**
@@ -231,6 +263,16 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     TGRegion *region = noti.userInfo[TGSelectRegion];
     NSString *subregionName = noti.userInfo[TGSelectSubRegionName];
+    
+    if(subregionName == nil || [subregionName isEqualToString:@"全部"]){
+        
+        self.selectedRegionName = [region.name isEqualToString:@"全部"]? nil:region.name;
+        
+    }else{
+        
+        self.selectedRegionName = subregionName;
+    }
+    
      // 更换顶部item的文字
     TGHomeTopItem *top = (TGHomeTopItem *)self.districtItem.customView;
     [top setTitle:[NSString stringWithFormat:@"%@-%@",self.selectedCityName,region.name]];
@@ -238,6 +280,8 @@ static NSString * const reuseIdentifier = @"Cell";
     // 关闭 popover
     [self.districtPopover dismissPopoverAnimated:YES];
     
+    // 从服务器获取数据,刷新view
+    [self loadNewDeals];
 }
 /**
  *  排序改变
@@ -245,15 +289,58 @@ static NSString * const reuseIdentifier = @"Cell";
 -(void)sortDidChange:(NSNotification *)noti
 {
     TGSort *sort = noti.userInfo[TGSelectSort];
+    self.selectedSort = sort;
     // 更换顶部item的文字
     TGHomeTopItem *top = (TGHomeTopItem *)self.sortItem.customView;
     [top setSubTitle:sort.label];
     // 关闭 popover
     [self.sortPopover dismissPopoverAnimated:YES];
     
+    // 从服务器获取数据,刷新view
+    [self loadNewDeals];
 }
 
+#pragma mark - 服务器交互
 
+-(void)loadNewDeals
+{
+    DPAPI *dpApi = [[DPAPI alloc] init];
+    
+    // 设置请求参数
+    NSMutableDictionary *paras = [NSMutableDictionary dictionary];
+    paras[@"city"] = self.selectedCityName;
+    // 分类参数
+    if (self.selectedCategoryName) {
+        paras[@"category"] = self.selectedCategoryName;
+    }
+    // 区域参数
+    if (self.selectedRegionName) {
+        paras[@"region"] = self.selectedRegionName;
+    }
+    // 排序参数
+    if (self.selectedSort) {
+        paras[@"sort"] = @(self.selectedSort.value);
+    }
+    
+    // 每页的条数
+    paras[@"limit"] = @5;
+    [dpApi requestWithURL:@"v1/deal/find_deals" params:paras delegate:self];
+    
+    
+    TGLog(@"请求参数\n%@",paras);
+}
+#pragma mark
+/*  DPRequestDelegate 代理方法 */
+-(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
+{
+    TGLog(@"%@",result);
+}
+
+-(void)request:(DPRequest *)request didFailWithError:(NSError *)error
+{
+    TGLog(@"%@",error);
+}
+/*************************/
 
 /*
 #pragma mark - Navigation
