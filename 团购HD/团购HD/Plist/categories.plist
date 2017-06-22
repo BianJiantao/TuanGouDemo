@@ -30,49 +30,110 @@
 		<key>subcategories</key>
 		<array>
 			<string>全部</string>
-			<string>陕菜/西北菜</string>
-			<string>云南菜</string>
-			<string>素菜</string>
-			<string>台湾菜</string>
-			<string>客家菜</string>
-			<string>淮扬菜</string>
-			<string>赣菜</string>
-			<string>海南菜</string>
-			<string>豫菜</string>
-			<string>广西菜</string>
-			<string>贵州菜</string>
-			<string>北京菜</string>
-			<string>内蒙菜</string>
-			<string>江西菜</string>
-			<string>山西菜</string>
-			<string>茶餐厅</string>
-			<string>冀菜</string>
-			<string>闽菜</string>
-			<string>天津菜</string>
-			<string>创意菜</string>
-			<string>日韩料理</string>
-			<string>小吃快餐</string>
-			<string>海鲜</string>
-			<string>鲁菜</string>
-			<string>湖北菜</string>
-			<string>徽菜</string>
-			<string>烧烤烤肉</string>
-			<string>东南亚菜</string>
-			<string>东北菜</string>
-			<string>新疆/清真</string>
-			<string>江浙菜</string>
-			<string>咖啡厅</string>
-			<string>青海菜</string>
 			<string>火锅</string>
+			<string>自助餐</string>
+			<string>午市套餐</string>
+			<string>下午茶</string>
+			<string>日韩料理</string>
+			<string>江浙菜</string>
 			<string>西餐</string>
+			<string>烧烤/烤肉</string>
+			<string>海鲜</string>
+			<string>小吃快餐</string>
+			<string>汤/粥/炖菜</string>
+			<string>聚餐宴请</string>
+			<string>川湘菜</string>
+			<string>粤菜/茶餐厅</string>
+			<string>西北/新疆</string>
+			<string>云贵菜</string>
+			<string>清真</string>
+			<string>台湾菜</string>
+			<string>特色菜</string>
+			<string>咖啡茶馆</string>
+			<string>东南亚菜</string>
+			<string>京菜/鲁菜</string>
+			<string>小龙虾</string>
+			<string>蟹宴</string>
+			<string>冰淇淋</string>
+			<string>蛋糕</string>
+			<string>甜品饮料</string>
+			<string>闽菜</string>
+			<string>烤鱼</string>
+			<string>8-10人套餐</string>
+			<string>东北菜</string>
+			<string>情侣套餐</string>
+			<string>农家土菜</string>
+			<string>清明节传统糕点</string>
+			<string>日本料理</string>
+			<string>韩国料理</string>
 			<string>面包甜点</string>
-			<string>粤菜</string>
+			<string>日式自助</string>
+			<string>闽菜</string>
 			<string>川菜</string>
 			<string>湘菜</string>
-			<string>自助餐</string>
+			<string>粤菜</string>
+			<string>茶餐厅</string>
+			<string>西北菜</string>
+			<string>新疆菜</string>
+			<string>特色菜</string>
+			<string>北京菜</string>
+			<string>鲁菜</string>
+			<string>湖北菜</string>
+			<string>江西菜</string>
+			<string>山西菜</string>
+			<string>西藏菜</string>
+			<string>广西菜</string>
+			<string>香锅</string>
+			<string>西北/新疆菜</string>
+			<string>天津菜</string>
+			<string>北京北京菜</string>
+			<string>食品饮料</string>
+			<string>水果生鲜</string>
+			<string>贵州菜</string>
+			<string>云南菜</string>
+			<string>武汉湖北菜</string>
+			<string>福州闽菜</string>
+			<string>泰国菜</string>
+			<string>简餐快餐</string>
+			<string>宁波江浙菜</string>
+			<string>杭州南京上海苏州江浙菜</string>
+			<string>本帮菜</string>
+			<string>广州粤菜</string>
+			<string>深圳粤菜</string>
+			<string>四川火锅</string>
+			<string>牛排</string>
+			<string>烤鸭</string>
+			<string>家常菜</string>
+			<string>涮羊肉</string>
+			<string>串串香</string>
+			<string>鱼火锅</string>
+			<string>西式正餐</string>
+			<string>徽菜</string>
+			<string>陕菜</string>
+			<string>豫菜</string>
+			<string>私房菜</string>
+			<string>甜品</string>
+			<string>潮汕菜</string>
+			<string>越南菜</string>
+			<string>咖啡厅</string>
+			<string>茶馆</string>
+			<string>小吃</string>
+			<string>比萨</string>
 		</array>
 	</dict>
 	<dict>
+		<key>subcategories</key>
+		<array>
+			<string>全部</string>
+			<string>豪华酒店</string>
+			<string>经济型酒店</string>
+			<string>客栈/青旅/民宿</string>
+			<string>主题精品酒店</string>
+			<string>公寓式酒店</string>
+			<string>度假酒店</string>
+			<string>亲子酒店</string>
+			<string>温泉酒店</string>
+		</array>
 		<key>map_icon</key>
 		<string>ic_category_20</string>
 		<key>highlighted_icon</key>
@@ -85,20 +146,6 @@
 		<string>icon_filter_category_highlighted_20</string>
 		<key>small_icon</key>
 		<string>icon_filter_category_20</string>
-		<key>subcategories</key>
-		<array>
-			<string>全部</string>
-			<string>经济型酒店</string>
-			<string>公寓式酒店</string>
-			<string>四星级酒店</string>
-			<string>三星级酒店</string>
-			<string>五星级酒店</string>
-			<string>度假村</string>
-			<string>客栈旅舍</string>
-			<string>青年旅舍</string>
-			<string>农家院</string>
-			<string>精品酒店</string>
-		</array>
 	</dict>
 	<dict>
 		<key>map_icon</key>
@@ -108,13 +155,41 @@
 		<key>icon</key>
 		<string>icon_category_99</string>
 		<key>name</key>
-		<string>院线影院</string>
+		<string>电影</string>
 		<key>small_highlighted_icon</key>
 		<string>icon_filter_category_highlighted_99</string>
 		<key>small_icon</key>
 		<string>icon_filter_category_99</string>
 	</dict>
 	<dict>
+		<key>subcategories</key>
+		<array>
+			<string>全部</string>
+			<string>KTV</string>
+			<string>亲子游玩</string>
+			<string>洗浴/汗蒸</string>
+			<string>足疗按摩</string>
+			<string>景点郊游</string>
+			<string>运动健身</string>
+			<string>密室逃脱</string>
+			<string>酒吧</string>
+			<string>桌游</string>
+			<string>演出/赛事/展览</string>
+			<string>DIY手工</string>
+			<string>真人CS</string>
+			<string>农家乐/采摘</string>
+			<string>滑雪</string>
+			<string>游泳</string>
+			<string>私人影院</string>
+			<string>轰趴馆</string>
+			<string>文化艺术</string>
+			<string>茶馆</string>
+			<string>VR</string>
+			<string>网吧网咖</string>
+			<string>游艺游乐</string>
+			<string>中医养生</string>
+			<string>棋牌室</string>
+		</array>
 		<key>map_icon</key>
 		<string>ic_category_2</string>
 		<key>highlighted_icon</key>
@@ -127,26 +202,32 @@
 		<string>icon_filter_category_highlighted_2</string>
 		<key>small_icon</key>
 		<string>icon_filter_category_2</string>
+	</dict>
+	<dict>
 		<key>subcategories</key>
 		<array>
 			<string>全部</string>
-			<string>运动健身</string>
-			<string>酒吧</string>
-			<string>私人影院</string>
-			<string>KTV</string>
-			<string>游乐游艺</string>
-			<string>温泉/浴场</string>
-			<string>演出/赛事/展览</string>
-			<string>公园</string>
-			<string>桌游/密室</string>
-			<string>DIY手工</string>
-			<string>足疗按摩</string>
-			<string>景点郊游</string>
-			<string>咖啡厅</string>
-			<string>茶馆</string>
+			<string>婚纱摄影</string>
+			<string>儿童摄影</string>
+			<string>个性写真</string>
+			<string>母婴亲子</string>
+			<string>体检保健</string>
+			<string>汽车服务</string>
+			<string>照片冲印</string>
+			<string>培训课程</string>
+			<string>鲜花婚庆</string>
+			<string>配眼镜</string>
+			<string>商场购物卡</string>
+			<string>服装洗护</string>
+			<string>宠物服务</string>
+			<string>家政服务</string>
+			<string>送水站</string>
+			<string>搬家</string>
+			<string>管道疏通</string>
+			<string>开锁</string>
+			<string>维修</string>
+			<string>洗涤护理</string>
 		</array>
-	</dict>
-	<dict>
 		<key>map_icon</key>
 		<string>ic_category_3</string>
 		<key>highlighted_icon</key>
@@ -159,27 +240,6 @@
 		<string>icon_filter_category_highlighted_3</string>
 		<key>small_icon</key>
 		<string>icon_filter_category_3</string>
-		<key>subcategories</key>
-		<array>
-			<string>全部</string>
-			<string>体检保健</string>
-			<string>培训进修</string>
-			<string>快照冲印</string>
-			<string>宠物服务</string>
-			<string>汽车服务</string>
-			<string>家居软装</string>
-			<string>基础建材</string>
-			<string>洗衣店</string>
-			<string>机场</string>
-			<string>搬家</string>
-			<string>小区/商务楼</string>
-			<string>公交车</string>
-			<string>加油站</string>
-			<string>鲜花</string>
-			<string>家政服务</string>
-			<string>银行</string>
-			<string>装修设计</string>
-		</array>
 	</dict>
 	<dict>
 		<key>map_icon</key>
@@ -189,7 +249,7 @@
 		<key>icon</key>
 		<string>icon_category_3</string>
 		<key>name</key>
-		<string>结婚亲子</string>
+		<string>结婚</string>
 		<key>small_highlighted_icon</key>
 		<string>icon_filter_category_highlighted_3</string>
 		<key>small_icon</key>
@@ -243,6 +303,16 @@
 		</array>
 	</dict>
 	<dict>
+		<key>subcategories</key>
+		<array>
+			<string>全部</string>
+			<string>门票</string>
+			<string>周边游</string>
+			<string>国内游</string>
+			<string>出境游</string>
+			<string>单景点门票</string>
+			<string>多景点联票</string>
+		</array>
 		<key>map_icon</key>
 		<string>ic_category_78</string>
 		<key>highlighted_icon</key>
@@ -292,7 +362,7 @@
 		<key>icon</key>
 		<string>icon_category_5</string>
 		<key>name</key>
-		<string>抽奖</string>
+		<string>DIY手工</string>
 		<key>small_highlighted_icon</key>
 		<string>icon_filter_category_highlighted_5</string>
 		<key>small_icon</key>

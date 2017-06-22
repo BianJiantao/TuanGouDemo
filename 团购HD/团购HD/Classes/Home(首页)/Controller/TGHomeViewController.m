@@ -7,6 +7,10 @@
 //
 
 #import "DPAPI.h"
+#import "MJExtension.h"
+#import "MJRefresh.h"
+#import "UIView+AutoLayout.h"
+#import "MBProgressHUD+MJ.h"
 
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
@@ -22,65 +26,82 @@
 #import "TGRegion.h"
 #import "TGSortViewController.h"
 #import "TGSort.h"
+#import "TGDealCell.h"
+#import "TGDeal.h"
 
 @interface TGHomeViewController ()<DPRequestDelegate>
 
-/**
- *  分类
- */
+/**  分类 */
 @property (nonatomic,weak) UIBarButtonItem *categoryItem;
-/**
- *  地区
- */
+/** 地区*/
 @property (nonatomic,weak) UIBarButtonItem *districtItem;
-/**
- *  排序
- */
+/** 排序*/
 @property (nonatomic,weak) UIBarButtonItem *sortItem;
 
-/**
- *  当前选中的城市名字
- */
+/** 当前选中的城市名字 */
 @property (nonatomic,copy) NSString *selectedCityName;
-/**
- *  当前选中的分类名字
- */
+/** 当前选中的分类名字 */
 @property (nonatomic,copy) NSString *selectedCategoryName;
-/**
- *  当前选中的区域名字
- */
+/** 当前选中的区域名字 */
 @property (nonatomic,copy) NSString *selectedRegionName;
-/**
- *  当前选中的排序
- */
+/**  当前选中的排序 */
 @property (nonatomic,strong) TGSort *selectedSort;
 
-
-
-/**
- *  分类PopoverController
- */
+/**  分类PopoverController */
 @property (nonatomic,strong) UIPopoverController * categoryPopover;
-/**
- *  区域PopoverController
- */
+/**  区域PopoverController */
 @property (nonatomic,strong) UIPopoverController *districtPopover;
-/**
- *  排序PopoverController
- */
+/** 排序PopoverController */
 @property (nonatomic,strong) UIPopoverController * sortPopover;
+
+/** 订单数据 (存储TGDeal模型) */
+@property (nonatomic,strong) NSMutableArray<TGDeal *> *deals;
+/** 当前显示的数据对应的页码 */
+@property (nonatomic,assign) NSInteger currentPage;
+
+/** 最后一次网络请求,用于区别一个请求是否过期( 当网速慢时,有可能用户点击发送多个请求,只处理最后一次的请求) */
+@property (nonatomic,weak) DPRequest *lastREquest;
+/** 没有符合条件的团购时,显示的 view  */
+@property (nonatomic,weak) UIImageView *noDataView;
+
+/** 返回的团购总数 */
+@property (nonatomic,assign) NSInteger totalCount;
 
 @end
 
 @implementation TGHomeViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"deal";
+
+- (NSMutableArray *)deals
+{
+    if (_deals == nil) {
+        _deals = [[NSMutableArray alloc] init];
+    }
+    return _deals;
+}
+
+- (UIImageView *)noDataView
+{
+    if (_noDataView == nil) {
+        UIImageView *imgV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_deals_empty"]];
+        [self.collectionView addSubview:imgV];
+        [imgV autoCenterInSuperview];
+        
+        _noDataView = imgV;
+        
+    }
+    return _noDataView;
+}
 
 
 -(instancetype)init
 {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     
+    flowLayout.itemSize = CGSizeMake(305, 305);
+    
+    flowLayout.minimumLineSpacing = 20;
     return  [super initWithCollectionViewLayout:flowLayout];
 }
 
@@ -92,13 +113,15 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 设置背景颜色
     self.collectionView.backgroundColor = kTGColorRGB(230, 230, 230);
+//    self.collectionView.alwaysBounceVertical = YES;
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TGDealCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
     
     // 设置导航条左侧内容
     [self setupNavBarLeft];
@@ -113,6 +136,10 @@ static NSString * const reuseIdentifier = @"Cell";
     [TGNotificationCenter addObserver:self selector:@selector(regionDidChange:) name:TGRegionDidChangeNotification object:nil];
     // 监听排序切换
     [TGNotificationCenter addObserver:self selector:@selector( sortDidChange:) name:TGSortDidChangeNotification object:nil];
+
+    // 集成  上拉刷新, 加载更多 / 下拉刷新,加载最新
+    [self.collectionView addFooterWithTarget:self action:@selector(loadMoreDeals)];
+    [self.collectionView addHeaderWithTarget:self action:@selector(loadNewDeals)];
 }
 
 #pragma mark - 设置导航栏内容
@@ -224,7 +251,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [top setSubTitle:nil];
     
     // 从服务器获取数据,刷新view
-    [self loadNewDeals];
+    [self.collectionView  headerBeginRefreshing];
 
 }
 /**
@@ -253,7 +280,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.categoryPopover dismissPopoverAnimated:YES];
     
     // 从服务器获取数据,刷新view
-    [self loadNewDeals];
+    [self.collectionView  headerBeginRefreshing];
     
 }
 /**
@@ -281,7 +308,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.districtPopover dismissPopoverAnimated:YES];
     
     // 从服务器获取数据,刷新view
-    [self loadNewDeals];
+    [self.collectionView  headerBeginRefreshing];
 }
 /**
  *  排序改变
@@ -297,13 +324,14 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.sortPopover dismissPopoverAnimated:YES];
     
     // 从服务器获取数据,刷新view
-    [self loadNewDeals];
+    [self.collectionView  headerBeginRefreshing];
 }
 
 #pragma mark - 服务器交互
 
--(void)loadNewDeals
+- (void)loadDeals
 {
+    
     DPAPI *dpApi = [[DPAPI alloc] init];
     
     // 设置请求参数
@@ -324,50 +352,119 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 每页的条数
     paras[@"limit"] = @5;
-    [dpApi requestWithURL:@"v1/deal/find_deals" params:paras delegate:self];
-    
-    
+    paras[@"page"] = @(self.currentPage);
+    // 记录最后一次请求
+     self.lastREquest = [dpApi requestWithURL:@"v1/deal/find_deals" params:paras delegate:self];
     TGLog(@"请求参数\n%@",paras);
+}
+
+
+/**
+ *  上拉刷新加载更多
+ */
+-(void)loadMoreDeals
+{
+    // 从服务器加载下一页数据
+    self.currentPage++;
+    
+    [self loadDeals];
+    
+    
+}
+
+/**
+ *   加载新团购
+ */
+-(void)loadNewDeals
+{
+    // 新请求,只从服务器加载第一页的数据
+    self.currentPage  = 1;
+    
+    [self loadDeals];
+    
 }
 #pragma mark
 /*  DPRequestDelegate 代理方法 */
 -(void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
 {
-    TGLog(@"%@",result);
+    if(self.lastREquest != request) return; // 过期请求,不处理
+    
+//    TGLog(@"%@",result);
+    // 取出团购总数
+    self.totalCount = [result[@"total_count"] integerValue];
+    
+    // 字典数组转模型数组
+    NSArray *array = [TGDeal objectArrayWithKeyValuesArray:result[@"deals"]];
+    if (self.currentPage == 1) { // loadNewdeals 加载新团购时, 清空之前团购数组
+        [self.deals removeAllObjects];
+    }
+    [self.deals addObjectsFromArray:array];
+    
+    [self.collectionView reloadData];
+    
+    // 结束刷新
+    [self.collectionView footerEndRefreshing];
+    [self.collectionView headerEndRefreshing];
 }
 
 -(void)request:(DPRequest *)request didFailWithError:(NSError *)error
 {
-    TGLog(@"%@",error);
+    if(self.lastREquest != request) return; // 过期请求,不处理
+    
+//    TGLog(@"%@",error);
+    // toView不写时, hud 添加到window 上, window的原点坐标不会跟着屏幕旋转,hud视图会颠倒,所以要显示在self.collectionView上,横竖屏旋转时就没问题了
+    [MBProgressHUD showError:@"网络繁忙,请稍后再试..." toView:self.collectionView];
+    
+    //  结束刷新
+    [self.collectionView footerEndRefreshing];
+    [self.collectionView headerEndRefreshing];
+    
+    // 上拉加载失败,页码要减1
+    if(self.currentPage > 1)
+        self.currentPage--;
 }
-/*************************/
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - 屏幕将要旋转
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    TGLog(@"%@",NSStringFromCGSize(size));
+    
+    // 横屏 3 列,竖屏 2 列
+    int cols = (size.width == 1024) ? 3 : 2;
+    
+   UICollectionViewFlowLayout * flowLayout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
+    
+    CGFloat inset = (size.width - cols * flowLayout.itemSize.width)/(cols + 1);
+    
+    flowLayout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
 }
-*/
+
 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    
+    // 只要数据一刷新就计算一下布局
+    [self viewWillTransitionToSize:collectionView.size withTransitionCoordinator:nil];
+    
+    // 没有团购数据时,显示 noDataView
+    self.noDataView.hidden = (self.deals.count != 0);
+    // 全部团购数据已加载时,隐藏上拉刷新控件
+    self.collectionView.footerHidden = (self.deals.count == self.totalCount);
+    
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    
+    return self.deals.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    TGDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
+    cell.deal = self.deals[indexPath.item];
     // Configure the cell
     
     return cell;
@@ -375,33 +472,5 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDelegate>
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end
