@@ -7,6 +7,8 @@
 //
 
 #import "MJRefresh.h"
+#import "AwesomeMenu.h"
+#import "UIView+AutoLayout.h"
 
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
@@ -24,8 +26,10 @@
 #import "TGSort.h"
 #import "TGSearchController.h"
 #import "TGNavigationController.h"
+#import "TGCollecController.h"
+#import "TGScanHistoryController.h"
 
-@interface TGHomeViewController ()
+@interface TGHomeViewController ()<AwesomeMenuDelegate>
 
 /**  分类 */
 @property (nonatomic,weak) UIBarButtonItem *categoryItem;
@@ -66,6 +70,9 @@
     [self setupNavBarLeft];
     // 设置导航条右侧内容
     [self setupNavBarRight];
+    // 设置AwesomeMenu
+    [self setupAwesomeMenu];
+    
     
     // 监听城市切换
     [TGNotificationCenter addObserver:self selector:@selector(cityDidChange:) name:TGCityDidChangeNotification object:nil];
@@ -76,6 +83,80 @@
     // 监听排序切换
     [TGNotificationCenter addObserver:self selector:@selector( sortDidChange:) name:TGSortDidChangeNotification object:nil];
 }
+
+#pragma mark - 设置AwesomeMenu
+-(void)setupAwesomeMenu
+{
+    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"icon_pathMenu_background_normal"] highlightedImage:[UIImage imageNamed:@"icon_pathMenu_background_highlighted"] ContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_highlighted"]];
+    // 个人
+    AwesomeMenuItem *mineItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_mine_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_mine_highlighted"]];
+    // 收藏
+    AwesomeMenuItem *collectItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_highlighted"]];
+    // 浏览记录
+    AwesomeMenuItem *scanItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_highlighted"]];
+    // 更多
+    AwesomeMenuItem *moreItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_more_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_more_highlighted"]];
+    
+    NSArray *otherItems = @[mineItem,collectItem,scanItem,moreItem];
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:CGRectZero startItem:startItem menuItems:otherItems];
+    menu.delegate = self;
+    menu.startPoint = CGPointMake(50, 150);
+    menu.menuWholeAngle = M_PI_2;
+    menu.rotateAddButton = NO;
+    menu.alpha = 0.3;
+    
+    [self.view addSubview:menu];
+    
+    //  设置 menu 的 autoLayout
+    [menu autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:0];
+    [menu autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:0];
+    [menu autoSetDimensionsToSize:CGSizeMake(200, 200)];
+                         
+}
+
+#pragma mark - AwesomeMenu代理方法
+-(void)awesomeMenuWillAnimateOpen:(AwesomeMenu *)menu
+{
+    // 更换 主item 图片
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_cross_normal"];
+    menu.alpha = 1;
+}
+-(void)awesomeMenuWillAnimateClose:(AwesomeMenu *)menu
+{
+    // 更换 主item 图片
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
+    menu.alpha = 0.3;
+    
+}
+-(void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    // 更换 主item 图片
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
+    menu.alpha = 0.3;
+//    TGLog(@"%d",idx);
+    
+    switch (idx) {
+        case 1:  {  // 收藏
+            
+            TGCollecController *collect = [[TGCollecController alloc] init];
+            TGNavigationController *collectNav = [[TGNavigationController alloc] initWithRootViewController:collect];
+            [self presentViewController:collectNav animated:YES completion:nil];
+            
+        }
+            break;
+        case 2:  {  // 浏览记录
+            
+            TGScanHistoryController *scan = [[TGScanHistoryController alloc] init];
+            TGNavigationController *scanNav = [[TGNavigationController alloc] initWithRootViewController:scan];
+            [self presentViewController:scanNav animated:YES completion:nil];
+            
+        }
+            break;
+    }
+    
+    
+}
+
 
 #pragma mark - 设置导航栏内容
 /**

@@ -84,6 +84,10 @@
 		6CFBFD9F1EFCEF7B004F5EEF /* TGSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFD9E1EFCEF7B004F5EEF /* TGSearchController.m */; settings = {ASSET_TAGS = (); }; };
 		6CFBFDA21EFCFBE3004F5EEF /* TGCenterLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDA11EFCFBE3004F5EEF /* TGCenterLineLabel.m */; settings = {ASSET_TAGS = (); }; };
 		6CFBFDA51EFCFF5C004F5EEF /* TGDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDA41EFCFF5C004F5EEF /* TGDealViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDAB1EFD5744004F5EEF /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDA81EFD5744004F5EEF /* AwesomeMenu.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDAC1EFD5744004F5EEF /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDAA1EFD5744004F5EEF /* AwesomeMenuItem.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDB31EFD6310004F5EEF /* TGCollecController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDB21EFD6310004F5EEF /* TGCollecController.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDB61EFD6328004F5EEF /* TGScanHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDB51EFD6328004F5EEF /* TGScanHistoryController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +256,14 @@
 		6CFBFDA11EFCFBE3004F5EEF /* TGCenterLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCenterLineLabel.m; sourceTree = "<group>"; };
 		6CFBFDA31EFCFF5C004F5EEF /* TGDealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGDealViewController.h; sourceTree = "<group>"; };
 		6CFBFDA41EFCFF5C004F5EEF /* TGDealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGDealViewController.m; sourceTree = "<group>"; };
+		6CFBFDA71EFD5744004F5EEF /* AwesomeMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenu.h; sourceTree = "<group>"; };
+		6CFBFDA81EFD5744004F5EEF /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
+		6CFBFDA91EFD5744004F5EEF /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
+		6CFBFDAA1EFD5744004F5EEF /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		6CFBFDB11EFD6310004F5EEF /* TGCollecController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCollecController.h; sourceTree = "<group>"; };
+		6CFBFDB21EFD6310004F5EEF /* TGCollecController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCollecController.m; sourceTree = "<group>"; };
+		6CFBFDB41EFD6328004F5EEF /* TGScanHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGScanHistoryController.h; sourceTree = "<group>"; };
+		6CFBFDB51EFD6328004F5EEF /* TGScanHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGScanHistoryController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +414,8 @@
 		6C7AAB2C1EF120020012AF85 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6CFBFDAF1EFD62EB004F5EEF /* ScanHistory(浏览记录) */,
+				6CFBFDAD1EFD62E3004F5EEF /* Collection(收藏) */,
 				6CFBFD991EFCEF46004F5EEF /* Search(搜索) */,
 				6C7AAB2D1EF120020012AF85 /* Home(首页) */,
 				6C7AAB311EF120020012AF85 /* Main(主要) */,
@@ -560,6 +574,7 @@
 		6C7AAB691EF3BD880012AF85 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				6CFBFDA61EFD5744004F5EEF /* AwesomeMenu */,
 				6CFBFD901EFBD2F2004F5EEF /* MBProgressHUD */,
 				6C0345821EFBA4700088768B /* MJRefresh */,
 				6C0345501EFB87630088768B /* SDWebImage */,
@@ -655,6 +670,51 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6CFBFDA61EFD5744004F5EEF /* AwesomeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFDA71EFD5744004F5EEF /* AwesomeMenu.h */,
+				6CFBFDA81EFD5744004F5EEF /* AwesomeMenu.m */,
+				6CFBFDA91EFD5744004F5EEF /* AwesomeMenuItem.h */,
+				6CFBFDAA1EFD5744004F5EEF /* AwesomeMenuItem.m */,
+			);
+			path = AwesomeMenu;
+			sourceTree = "<group>";
+		};
+		6CFBFDAD1EFD62E3004F5EEF /* Collection(收藏) */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFDAE1EFD62E3004F5EEF /* Controller */,
+			);
+			path = "Collection(收藏)";
+			sourceTree = "<group>";
+		};
+		6CFBFDAE1EFD62E3004F5EEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFDB11EFD6310004F5EEF /* TGCollecController.h */,
+				6CFBFDB21EFD6310004F5EEF /* TGCollecController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6CFBFDAF1EFD62EB004F5EEF /* ScanHistory(浏览记录) */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFDB01EFD62EB004F5EEF /* Controller */,
+			);
+			path = "ScanHistory(浏览记录)";
+			sourceTree = "<group>";
+		};
+		6CFBFDB01EFD62EB004F5EEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFDB41EFD6328004F5EEF /* TGScanHistoryController.h */,
+				6CFBFDB51EFD6328004F5EEF /* TGScanHistoryController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -807,10 +867,12 @@
 				6CFBFD981EFBD2F2004F5EEF /* MBProgressHUD.m in Sources */,
 				6C03454B1EFB848C0088768B /* TGDealCell.m in Sources */,
 				6C03457B1EFB87630088768B /* UIButton+WebCache.m in Sources */,
+				6CFBFDB61EFD6328004F5EEF /* TGScanHistoryController.m in Sources */,
 				6C7AAB5E1EF37A200012AF85 /* TGHomeDropDownMenu.m in Sources */,
 				6C7AABF21EFA34BD0012AF85 /* Foundation+Log.m in Sources */,
 				6C0345791EFB87630088768B /* SDWebImageManager.m in Sources */,
 				6C0345961EFBA4700088768B /* MJRefreshFooterView.m in Sources */,
+				6CFBFDAB1EFD5744004F5EEF /* AwesomeMenu.m in Sources */,
 				6CFBFDA21EFCFBE3004F5EEF /* TGCenterLineLabel.m in Sources */,
 				6C7AABBA1EF3BF460012AF85 /* NSObject+MJKeyValue.m in Sources */,
 				6C7AABDE1EF4EC150012AF85 /* TGRegion.m in Sources */,
@@ -832,6 +894,7 @@
 				6C03457F1EFB87630088768B /* UIImageView+HighlightedWebCache.m in Sources */,
 				6C0345991EFBA4700088768B /* UIScrollView+MJRefresh.m in Sources */,
 				6C7AAB4D1EF124410012AF85 /* TGConst.m in Sources */,
+				6CFBFDAC1EFD5744004F5EEF /* AwesomeMenuItem.m in Sources */,
 				6C7AABB51EF3BF460012AF85 /* MJFoundation.m in Sources */,
 				6C7AABEF1EF91CD50012AF85 /* DPAPI.m in Sources */,
 				6C0345951EFBA4700088768B /* MJRefreshConst.m in Sources */,
@@ -855,6 +918,7 @@
 				6C7AABD21EF3F9E60012AF85 /* TGCityGroup.m in Sources */,
 				6C0345741EFB87630088768B /* SDImageCache.m in Sources */,
 				6C0345731EFB87630088768B /* NSData+ImageContentType.m in Sources */,
+				6CFBFDB31EFD6310004F5EEF /* TGCollecController.m in Sources */,
 				6C7AAB681EF3BCF70012AF85 /* TGCategory.m in Sources */,
 				6C03457A1EFB87630088768B /* SDWebImagePrefetcher.m in Sources */,
 				6C03457D1EFB87630088768B /* UIImage+MultiFormat.m in Sources */,

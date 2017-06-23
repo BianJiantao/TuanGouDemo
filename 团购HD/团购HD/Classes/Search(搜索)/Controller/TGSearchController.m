@@ -8,6 +8,7 @@
 
 #import "UIBarButtonItem+Extension.h"
 #import "MJRefresh.h"
+#import "UIView+Extension.h"
 
 #import "TGSearchController.h"
 
@@ -24,7 +25,7 @@
     self.navigationItem.leftBarButtonItem = backBtnItem;
     
 //    UIView *titleView = [[UIView alloc] init];
-//    titleView.width = 200;
+//    titleView.width = 300;
 //    titleView.height = 35;
 //    titleView.backgroundColor = [UIColor redColor];
     
@@ -32,7 +33,9 @@
     UISearchBar *searchBar = [[UISearchBar alloc] init];
     searchBar.placeholder = @"请输入关键词";
     searchBar.backgroundImage = [UIImage imageNamed:@"bg_login_textfield"];
+//    searchBar.backgroundColor  =[UIColor clearColor];
     searchBar.delegate = self;
+    
 //    searchBar.frame = titleView.bounds;
 //    [titleView addSubview:searchBar];
     
