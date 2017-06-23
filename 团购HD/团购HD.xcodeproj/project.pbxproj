@@ -81,6 +81,9 @@
 		6CFBFD961EFBD2F2004F5EEF /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFD921EFBD2F2004F5EEF /* MBProgressHUD+MJ.m */; settings = {ASSET_TAGS = (); }; };
 		6CFBFD971EFBD2F2004F5EEF /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6CFBFD931EFBD2F2004F5EEF /* MBProgressHUD.bundle */; settings = {ASSET_TAGS = (); }; };
 		6CFBFD981EFBD2F2004F5EEF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFD951EFBD2F2004F5EEF /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFD9F1EFCEF7B004F5EEF /* TGSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFD9E1EFCEF7B004F5EEF /* TGSearchController.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDA21EFCFBE3004F5EEF /* TGCenterLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDA11EFCFBE3004F5EEF /* TGCenterLineLabel.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDA51EFCFF5C004F5EEF /* TGDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDA41EFCFF5C004F5EEF /* TGDealViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +246,12 @@
 		6CFBFD931EFBD2F2004F5EEF /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		6CFBFD941EFBD2F2004F5EEF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		6CFBFD951EFBD2F2004F5EEF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		6CFBFD9D1EFCEF7B004F5EEF /* TGSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSearchController.h; sourceTree = "<group>"; };
+		6CFBFD9E1EFCEF7B004F5EEF /* TGSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSearchController.m; sourceTree = "<group>"; };
+		6CFBFDA01EFCFBE3004F5EEF /* TGCenterLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCenterLineLabel.h; sourceTree = "<group>"; };
+		6CFBFDA11EFCFBE3004F5EEF /* TGCenterLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCenterLineLabel.m; sourceTree = "<group>"; };
+		6CFBFDA31EFCFF5C004F5EEF /* TGDealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGDealViewController.h; sourceTree = "<group>"; };
+		6CFBFDA41EFCFF5C004F5EEF /* TGDealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGDealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +402,7 @@
 		6C7AAB2C1EF120020012AF85 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6CFBFD991EFCEF46004F5EEF /* Search(搜索) */,
 				6C7AAB2D1EF120020012AF85 /* Home(首页) */,
 				6C7AAB311EF120020012AF85 /* Main(主要) */,
 			);
@@ -466,6 +476,8 @@
 				6C7AABBC1EF3C2B90012AF85 /* TGHomeDropDownMainCell.m */,
 				6C7AABBE1EF3C2C70012AF85 /* TGHomeDropDownSubCell.h */,
 				6C7AABBF1EF3C2C70012AF85 /* TGHomeDropDownSubCell.m */,
+				6CFBFDA01EFCFBE3004F5EEF /* TGCenterLineLabel.h */,
+				6CFBFDA11EFCFBE3004F5EEF /* TGCenterLineLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -502,6 +514,8 @@
 			children = (
 				6C7AAB451EF123F30012AF85 /* TGNavigationController.h */,
 				6C7AAB461EF123F30012AF85 /* TGNavigationController.m */,
+				6CFBFDA31EFCFF5C004F5EEF /* TGDealViewController.h */,
+				6CFBFDA41EFCFF5C004F5EEF /* TGDealViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -608,6 +622,39 @@
 				6CFBFD951EFBD2F2004F5EEF /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		6CFBFD991EFCEF46004F5EEF /* Search(搜索) */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFD9A1EFCEF46004F5EEF /* Controller */,
+				6CFBFD9B1EFCEF46004F5EEF /* Model */,
+				6CFBFD9C1EFCEF46004F5EEF /* View */,
+			);
+			path = "Search(搜索)";
+			sourceTree = "<group>";
+		};
+		6CFBFD9A1EFCEF46004F5EEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFD9D1EFCEF7B004F5EEF /* TGSearchController.h */,
+				6CFBFD9E1EFCEF7B004F5EEF /* TGSearchController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6CFBFD9B1EFCEF46004F5EEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CFBFD9C1EFCEF46004F5EEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -764,6 +811,7 @@
 				6C7AABF21EFA34BD0012AF85 /* Foundation+Log.m in Sources */,
 				6C0345791EFB87630088768B /* SDWebImageManager.m in Sources */,
 				6C0345961EFBA4700088768B /* MJRefreshFooterView.m in Sources */,
+				6CFBFDA21EFCFBE3004F5EEF /* TGCenterLineLabel.m in Sources */,
 				6C7AABBA1EF3BF460012AF85 /* NSObject+MJKeyValue.m in Sources */,
 				6C7AABDE1EF4EC150012AF85 /* TGRegion.m in Sources */,
 				6C03459A1EFBA4700088768B /* UIView+MJExtension.m in Sources */,
@@ -774,6 +822,7 @@
 				6C7AAB501EF12C6A0012AF85 /* UIBarButtonItem+Extension.m in Sources */,
 				6C7AAB4A1EF124160012AF85 /* TGHomeViewController.m in Sources */,
 				6C03457E1EFB87630088768B /* UIImage+WebP.m in Sources */,
+				6CFBFD9F1EFCEF7B004F5EEF /* TGSearchController.m in Sources */,
 				6C7AAB471EF123F30012AF85 /* TGNavigationController.m in Sources */,
 				6C0345781EFB87630088768B /* SDWebImageDownloaderOperation.m in Sources */,
 				6C7AABC91EF3CC8C0012AF85 /* TGDistrictViewController.m in Sources */,
@@ -800,6 +849,7 @@
 				6C0345771EFB87630088768B /* SDWebImageDownloader.m in Sources */,
 				6C0345981EFBA4700088768B /* UIScrollView+MJExtension.m in Sources */,
 				6C7AABCE1EF3D50E0012AF85 /* TGCityViewController.m in Sources */,
+				6CFBFDA51EFCFF5C004F5EEF /* TGDealViewController.m in Sources */,
 				6C03457C1EFB87630088768B /* UIImage+GIF.m in Sources */,
 				6C0345971EFBA4700088768B /* MJRefreshHeaderView.m in Sources */,
 				6C7AABD21EF3F9E60012AF85 /* TGCityGroup.m in Sources */,

@@ -16,6 +16,7 @@
 #define kTGColorRGB(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define kTGColorRandom kTGColorRGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
+#define kTGGlobalBackGroundColor kTGColorRGB(230, 230, 230)
 
 #define TGNotificationCenter [NSNotificationCenter defaultCenter]
 /**

@@ -56,7 +56,6 @@
     // 当服务器返回数据小数位数很长时,四舍五入保留2位小数
 //    currentPrice = @"12.34567";
     NSInteger dotLoc = [currentPrice rangeOfString:@"."].location;
-    CGFloat newPrice;
     if (dotLoc != NSNotFound ) { // 有小数位
         
         if (currentPrice.length - dotLoc > 3) { // 大于2位小数
