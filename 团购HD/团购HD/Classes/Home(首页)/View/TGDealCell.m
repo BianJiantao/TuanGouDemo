@@ -51,17 +51,17 @@
     self.titleLabel.text = deal.title;
     self.descLabel.text = deal.desc;
     
-    NSString *currentPrice = deal.current_price.description;
-    
+    NSString *priceStr = self.deal.current_price.description;
+    NSString *currentPrice = [NSString stringWithFormat:@"¥ %@",priceStr];
     // 当服务器返回数据小数位数很长时,四舍五入保留2位小数
-//    currentPrice = @"12.34567";
-    NSInteger dotLoc = [currentPrice rangeOfString:@"."].location;
+    //    priceStr = @"12.34567";
+    NSInteger dotLoc = [priceStr rangeOfString:@"."].location;
     if (dotLoc != NSNotFound ) { // 有小数位
         
-        if (currentPrice.length - dotLoc > 3) { // 大于2位小数
-//            currentPrice = [currentPrice substringToIndex:dotLoc + 4];
-//            newPrice = (int)(100 * [currentPrice floatValue] + 0.5) / 100.0;
-            currentPrice = [NSString stringWithFormat:@"¥ %.2f",[currentPrice floatValue]];
+        if (priceStr.length - dotLoc > 3) { // 大于2位小数
+            //            currentPrice = [currentPrice substringToIndex:dotLoc + 4];
+            //            newPrice = (int)(100 * [currentPrice floatValue] + 0.5) / 100.0;
+            currentPrice = [NSString stringWithFormat:@"¥ %.2f",[priceStr floatValue]];
         }
     }
     

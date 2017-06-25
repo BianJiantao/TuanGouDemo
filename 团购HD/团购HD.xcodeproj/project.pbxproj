@@ -88,6 +88,10 @@
 		6CFBFDAC1EFD5744004F5EEF /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDAA1EFD5744004F5EEF /* AwesomeMenuItem.m */; settings = {ASSET_TAGS = (); }; };
 		6CFBFDB31EFD6310004F5EEF /* TGCollecController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDB21EFD6310004F5EEF /* TGCollecController.m */; settings = {ASSET_TAGS = (); }; };
 		6CFBFDB61EFD6328004F5EEF /* TGScanHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDB51EFD6328004F5EEF /* TGScanHistoryController.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDBC1EFE5649004F5EEF /* TGDealDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDBA1EFE5649004F5EEF /* TGDealDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDBD1EFE5649004F5EEF /* TGDealDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CFBFDBB1EFE5649004F5EEF /* TGDealDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDBF1EFE6452004F5EEF /* html.html in Resources */ = {isa = PBXBuildFile; fileRef = 6CFBFDBE1EFE6452004F5EEF /* html.html */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDC51EFF9240004F5EEF /* TGDealRestrictions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDC41EFF9240004F5EEF /* TGDealRestrictions.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +268,12 @@
 		6CFBFDB21EFD6310004F5EEF /* TGCollecController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCollecController.m; sourceTree = "<group>"; };
 		6CFBFDB41EFD6328004F5EEF /* TGScanHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGScanHistoryController.h; sourceTree = "<group>"; };
 		6CFBFDB51EFD6328004F5EEF /* TGScanHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGScanHistoryController.m; sourceTree = "<group>"; };
+		6CFBFDB91EFE5649004F5EEF /* TGDealDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGDealDetailViewController.h; sourceTree = "<group>"; };
+		6CFBFDBA1EFE5649004F5EEF /* TGDealDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGDealDetailViewController.m; sourceTree = "<group>"; };
+		6CFBFDBB1EFE5649004F5EEF /* TGDealDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGDealDetailViewController.xib; sourceTree = "<group>"; };
+		6CFBFDBE1EFE6452004F5EEF /* html.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = html.html; sourceTree = "<group>"; };
+		6CFBFDC31EFF9240004F5EEF /* TGDealRestrictions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGDealRestrictions.h; sourceTree = "<group>"; };
+		6CFBFDC41EFF9240004F5EEF /* TGDealRestrictions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGDealRestrictions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +399,7 @@
 			children = (
 				6C7AAB3C1EF120B50012AF85 /* Plist */,
 				6C7AAB0A1EF0F86E0012AF85 /* Info.plist */,
+				6CFBFDBE1EFE6452004F5EEF /* html.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -414,6 +425,7 @@
 		6C7AAB2C1EF120020012AF85 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6CFBFDB71EFE5620004F5EEF /* DealDetail(订单详情) */,
 				6CFBFDAF1EFD62EB004F5EEF /* ScanHistory(浏览记录) */,
 				6CFBFDAD1EFD62E3004F5EEF /* Collection(收藏) */,
 				6CFBFD991EFCEF46004F5EEF /* Search(搜索) */,
@@ -470,6 +482,8 @@
 				6C7AABE71EF770FB0012AF85 /* TGSort.m */,
 				6C03454D1EFB86290088768B /* TGDeal.h */,
 				6C03454E1EFB86290088768B /* TGDeal.m */,
+				6CFBFDC31EFF9240004F5EEF /* TGDealRestrictions.h */,
+				6CFBFDC41EFF9240004F5EEF /* TGDealRestrictions.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -717,6 +731,24 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		6CFBFDB71EFE5620004F5EEF /* DealDetail(订单详情) */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFDB81EFE5620004F5EEF /* Controller */,
+			);
+			path = "DealDetail(订单详情)";
+			sourceTree = "<group>";
+		};
+		6CFBFDB81EFE5620004F5EEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFDB91EFE5649004F5EEF /* TGDealDetailViewController.h */,
+				6CFBFDBA1EFE5649004F5EEF /* TGDealDetailViewController.m */,
+				6CFBFDBB1EFE5649004F5EEF /* TGDealDetailViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -827,12 +859,14 @@
 				6C7AAB411EF120B50012AF85 /* categories.plist in Resources */,
 				6C7AAB441EF120B50012AF85 /* sorts.plist in Resources */,
 				6CFBFD971EFBD2F2004F5EEF /* MBProgressHUD.bundle in Resources */,
+				6CFBFDBD1EFE5649004F5EEF /* TGDealDetailViewController.xib in Resources */,
 				6C7AABCA1EF3CC8C0012AF85 /* TGDistrictViewController.xib in Resources */,
 				6C7AAB061EF0F86E0012AF85 /* Assets.xcassets in Resources */,
 				6C0345931EFBA4700088768B /* MJRefresh.bundle in Resources */,
 				6C7AAB431EF120B50012AF85 /* cityGroups.plist in Resources */,
 				6C03454C1EFB848C0088768B /* TGDealCell.xib in Resources */,
 				6C7AABCF1EF3D50E0012AF85 /* TGCityViewController.xib in Resources */,
+				6CFBFDBF1EFE6452004F5EEF /* html.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,7 +952,9 @@
 				6C7AABD21EF3F9E60012AF85 /* TGCityGroup.m in Sources */,
 				6C0345741EFB87630088768B /* SDImageCache.m in Sources */,
 				6C0345731EFB87630088768B /* NSData+ImageContentType.m in Sources */,
+				6CFBFDC51EFF9240004F5EEF /* TGDealRestrictions.m in Sources */,
 				6CFBFDB31EFD6310004F5EEF /* TGCollecController.m in Sources */,
+				6CFBFDBC1EFE5649004F5EEF /* TGDealDetailViewController.m in Sources */,
 				6C7AAB681EF3BCF70012AF85 /* TGCategory.m in Sources */,
 				6C03457A1EFB87630088768B /* SDWebImagePrefetcher.m in Sources */,
 				6C03457D1EFB87630088768B /* UIImage+MultiFormat.m in Sources */,

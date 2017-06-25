@@ -6,16 +6,6 @@
 //  Copyright © 2017年 BJT. All rights reserved.
 //
 
-#import "TGDealViewController.h"
-
-//
-//  TGHomeViewController.m
-//  团购HD
-//
-//  Created by BJT on 17/6/14.
-//  Copyright © 2017年 BJT. All rights reserved.
-//
-
 #import "DPAPI.h"
 #import "MJExtension.h"
 #import "MJRefresh.h"
@@ -25,9 +15,11 @@
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
 
+#import "TGDealViewController.h"
 #import "TGConst.h"
 #import "TGDealCell.h"
 #import "TGDeal.h"
+#import "TGDealDetailViewController.h"
 
 @interface TGDealViewController ()<DPRequestDelegate>
 
@@ -237,6 +229,16 @@ static NSString * const reuseIdentifier = @"deal";
 }
 
 #pragma mark <UICollectionViewDelegate>
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 展示订单详情
+    TGDealDetailViewController *detailVc = [[TGDealDetailViewController alloc] init];
+    // 设置要展示的订单
+    detailVc.deal = self.deals[indexPath.item];
+    [self presentViewController:detailVc animated:YES completion:nil];
+    
+}
+
 
 
 @end

@@ -10,4 +10,7 @@
 
 @interface TGSearchController : TGDealViewController
 
+/** 要搜索的城市名字 */
+@property (nonatomic,copy) NSString *searchCityNmae;
+
 @end

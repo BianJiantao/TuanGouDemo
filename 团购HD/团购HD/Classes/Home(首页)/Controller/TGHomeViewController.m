@@ -9,6 +9,7 @@
 #import "MJRefresh.h"
 #import "AwesomeMenu.h"
 #import "UIView+AutoLayout.h"
+#import "MBProgressHUD+MJ.h"
 
 #import "UIBarButtonItem+Extension.h"
 #import "UIView+Extension.h"
@@ -89,13 +90,13 @@
 {
     AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"icon_pathMenu_background_normal"] highlightedImage:[UIImage imageNamed:@"icon_pathMenu_background_highlighted"] ContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_highlighted"]];
     // 个人
-    AwesomeMenuItem *mineItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_mine_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_mine_highlighted"]];
+    AwesomeMenuItem *mineItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:[UIImage imageNamed:@"icon_pathMenu_background"] ContentImage:[UIImage imageNamed:@"icon_pathMenu_mine_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_mine_highlighted"]];
     // 收藏
-    AwesomeMenuItem *collectItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_highlighted"]];
+    AwesomeMenuItem *collectItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:[UIImage imageNamed:@"icon_pathMenu_background"] ContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_highlighted"]];
     // 浏览记录
-    AwesomeMenuItem *scanItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_highlighted"]];
+    AwesomeMenuItem *scanItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:[UIImage imageNamed:@"icon_pathMenu_background"] ContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_highlighted"]];
     // 更多
-    AwesomeMenuItem *moreItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:nil ContentImage:[UIImage imageNamed:@"icon_pathMenu_more_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_more_highlighted"]];
+    AwesomeMenuItem *moreItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"] highlightedImage:[UIImage imageNamed:@"icon_pathMenu_background"] ContentImage:[UIImage imageNamed:@"icon_pathMenu_more_normal"] highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_more_highlighted"]];
     
     NSArray *otherItems = @[mineItem,collectItem,scanItem,moreItem];
     AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:CGRectZero startItem:startItem menuItems:otherItems];
@@ -140,7 +141,7 @@
             
             TGCollecController *collect = [[TGCollecController alloc] init];
             TGNavigationController *collectNav = [[TGNavigationController alloc] initWithRootViewController:collect];
-            [self presentViewController:collectNav animated:YES completion:nil];
+//            [self presentViewController:collectNav animated:YES completion:nil];
             
         }
             break;
@@ -148,7 +149,7 @@
             
             TGScanHistoryController *scan = [[TGScanHistoryController alloc] init];
             TGNavigationController *scanNav = [[TGNavigationController alloc] initWithRootViewController:scan];
-            [self presentViewController:scanNav animated:YES completion:nil];
+//            [self presentViewController:scanNav animated:YES completion:nil];
             
         }
             break;
@@ -217,8 +218,17 @@
 -(void)search
 {
     TGSearchController *search = [[TGSearchController alloc] init];
-    TGNavigationController *searchNav = [[TGNavigationController alloc] initWithRootViewController:search];
-    [self presentViewController:searchNav animated:YES completion:nil];
+    // 设置搜索的城市
+    if (self.selectedCityName.length) { // 已选择城市
+        
+        search.searchCityNmae = self.selectedCityName;
+        TGNavigationController *searchNav = [[TGNavigationController alloc] initWithRootViewController:search];
+        [self presentViewController:searchNav animated:YES completion:nil];
+        
+    }else{
+        
+        [MBProgressHUD showError:@"请选择城市后再搜索" toView: self.view];
+    }
 }
 
 /**

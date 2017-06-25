@@ -62,7 +62,7 @@
 #pragma mark - 实现父类方法,设置请求参数
 -(void)setupRequestParas:(NSMutableDictionary *)paras
 {
-    paras[@"city"] = @"北京";
+    paras[@"city"] = self.searchCityNmae;
     // 取出搜索框内输入的文本
     UISearchBar *searchBar = (UISearchBar *)self.navigationItem.titleView;
     

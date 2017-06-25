@@ -65,13 +65,13 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥108" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEy-mo-ddb" userLabel="原价" customClass="TGCenterLineLabel">
-                                <rect key="frame" x="60" y="80" width="31" height="15"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="原价" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEy-mo-ddb" userLabel="原价" customClass="TGCenterLineLabel">
+                                <rect key="frame" x="63" y="80" width="31" height="15"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="7GG-qe-5Ni"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -128,7 +128,7 @@
                 <outlet property="purchaseCountLabel" destination="zjf-mc-esg" id="2ee-Bj-vNt"/>
                 <outlet property="titleLabel" destination="FXO-D1-08B" id="TtD-vw-nnY"/>
             </connections>
-            <point key="canvasLocation" x="288.5" y="244.5"/>
+            <point key="canvasLocation" x="334.5" y="224.5"/>
         </collectionViewCell>
     </objects>
     <resources>
