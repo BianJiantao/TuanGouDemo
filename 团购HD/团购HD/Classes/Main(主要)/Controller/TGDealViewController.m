@@ -80,10 +80,7 @@ static NSString * const reuseIdentifier = @"deal";
     
     // 设置背景颜色
     self.collectionView.backgroundColor = kTGGlobalBackGroundColor;
-    //    self.collectionView.alwaysBounceVertical = YES;
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.collectionView.alwaysBounceVertical = YES;
     
     // Register cell classes
     [self.collectionView registerNib:[UINib nibWithNibName:@"TGDealCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];

@@ -21,3 +21,7 @@ NSString *const TGSelectSubRegionName = @"TGSelectSubRegionName";
 
 NSString *const TGSortDidChangeNotification = @"TGSortDidChangeNotification";
 NSString *const TGSelectSort = @"TGSelectSort";
+
+NSString *const TGDealCollectStateDidChangeNotification =@"TGDealCollectStateDidChangeNotification" ;
+NSString *const TGDealDidCollectClicked = @"TGDealDidCollectClicked";
+NSString *const TGDealIsCollect = @"TGDellIsCollect";

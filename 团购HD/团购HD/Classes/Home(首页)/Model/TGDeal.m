@@ -13,10 +13,17 @@
 
 @implementation TGDeal
 
+MJCodingImplementation
 
 +(NSDictionary *)replacedKeyFromPropertyName
 {// 映射  属性名 与 字典key
     return @{@"desc":@"description"};
+}
+
+-(BOOL)isEqual:(TGDeal *)other
+{
+    // deal_id 相等,就认为两个 deal 一样,用于数组删除
+    return [self.deal_id isEqualToString:other.deal_id];
 }
 
 @end

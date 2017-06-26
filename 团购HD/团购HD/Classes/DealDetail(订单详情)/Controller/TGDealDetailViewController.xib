@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TGDealDetailViewController">
             <connections>
+                <outlet property="collectBtn" destination="yUp-7A-fdH" id="tOF-n0-W6D"/>
                 <outlet property="currentPriceLabel" destination="b7g-8H-BXA" id="OT0-HS-dNH"/>
                 <outlet property="descLabel" destination="6j8-7N-h5F" id="bLE-Vw-yJL"/>
                 <outlet property="leftTimeBtn" destination="Zuw-It-JyP" id="vht-W2-yYl"/>
@@ -131,7 +132,7 @@
                                                 <constraint firstAttribute="height" constant="60" id="SOf-18-bYL"/>
                                             </constraints>
                                             <state key="normal" title="Button" backgroundImage="icon_share"/>
-                                            <state key="highlighted" image="icon_share_highlighted"/>
+                                            <state key="highlighted" backgroundImage="icon_share_highlighted"/>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htu-Ko-i9p" userLabel="分割线">
                                             <rect key="frame" x="0.0" y="49" width="360" height="1"/>
@@ -148,8 +149,12 @@
                                                 <constraint firstAttribute="height" constant="60" id="GYp-pu-YIV"/>
                                                 <constraint firstAttribute="width" constant="60" id="hME-SK-hkh"/>
                                             </constraints>
-                                            <state key="normal" image="icon_collect"/>
-                                            <state key="highlighted" image="icon_collect_highlighted"/>
+                                            <state key="normal" backgroundImage="icon_collect"/>
+                                            <state key="selected" backgroundImage="icon_collect_highlighted"/>
+                                            <state key="highlighted" backgroundImage="icon_collect_highlighted"/>
+                                            <connections>
+                                                <action selector="collectDeal:" destination="-1" eventType="touchUpInside" id="DXi-lE-suR"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <animations/>
@@ -302,7 +307,7 @@
                 <constraint firstItem="zz2-Tm-gx3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="svi-q6-0Uj"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-520" y="-303"/>
+            <point key="canvasLocation" x="-643" y="-304"/>
         </view>
     </objects>
     <resources>

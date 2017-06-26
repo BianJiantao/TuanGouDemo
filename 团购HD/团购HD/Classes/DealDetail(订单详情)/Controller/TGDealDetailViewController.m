@@ -16,6 +16,7 @@
 #import "TGConst.h"
 #import "TGCenterLineLabel.h"
 #import "TGDealRestrictions.h"
+#import "TGDealTool.h"
 
 @interface TGDealDetailViewController () <UIWebViewDelegate,DPRequestDelegate>
 /** 显示详情信息的 weibView */
@@ -43,6 +44,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *leftTimeBtn;
 /** 已售出 */
 @property (weak, nonatomic) IBOutlet UIButton *soldNumberBtn;
+- (IBAction)collectDeal:(id)sender;
+/** 收藏按钮 */
+@property (weak, nonatomic) IBOutlet UIButton *collectBtn;
 
 @end
 
@@ -64,7 +68,7 @@
     [self setupDealDetail];
     
     
-    // 获取订单更多详情
+    // 获取订单更多详情进行设置
     DPAPI *dpApi = [[DPAPI alloc] init];
     NSMutableDictionary *paras = [NSMutableDictionary dictionary];
     paras[@"deal_id"] = self.deal.deal_id;
@@ -129,6 +133,9 @@
     
     [self.leftTimeBtn setTitle:leftTime forState:UIControlStateNormal];
     
+    // 设置收藏状态
+    self.collectBtn.selected = [TGDealTool isCollected:self.deal];
+    
 }
 
 
@@ -144,12 +151,12 @@
 {
 //    NSLog(@"%@",result);
     // 返回一个订单
-    self.deal = [TGDeal objectWithKeyValues:[result[@"deals"] firstObject]];
+    TGDeal *deal = [TGDeal objectWithKeyValues:[result[@"deals"] firstObject]];
     // 设置支持退款信息
-    self.refundableAnyTimeBtn.selected = self.deal.restrictions.is_refundable;
-    self.refundableExpireBtn.selected = self.deal.restrictions.is_refundable;
-    
-    
+    self.refundableAnyTimeBtn.selected = deal.restrictions.is_refundable;
+    self.refundableExpireBtn.selected = deal.restrictions.is_refundable;
+    // 设置订单模型更多详情
+//    self.deal.restrictions = deal.restrictions;
 }
 
 -(void)request:(DPRequest *)request didFailWithError:(NSError *)error
@@ -168,7 +175,7 @@
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    
+    // 利用 JavaScript 删除订单详情 html 页面中的一些按钮
     NSMutableString *js = [NSMutableString string];
     // 移除 header 返回按钮
     [js appendString:@"var tgHeader = document.getElementsByTagName('header')[0];"];
@@ -206,6 +213,30 @@
 - (IBAction)back
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+/** 收藏按钮点击 */
+- (IBAction)collectDeal:(UIButton *)collectBtn
+{
+    NSMutableDictionary *info = [NSMutableDictionary dictionary];
+    info[TGDealDidCollectClicked] = self.deal;
+    
+    if (collectBtn.selected) { // 若已经收藏,则取消收藏
+        
+        [TGDealTool removeDealFromCollect:self.deal];
+        [MBProgressHUD showSuccess:@"取消收藏成功" toView: self.view];
+        info[TGDealIsCollect] = @(NO);
+        
+    }else { // 收藏
+        [TGDealTool addDealToCollect:self.deal];
+        [MBProgressHUD showSuccess:@"收藏成功" toView: self.view];
+        info[TGDealIsCollect] = @(YES);
+    }
+    // 选中状态取反
+    collectBtn.selected = (!collectBtn.selected);
+    
+    // 发出收藏改变的通知
+    [TGNotificationCenter postNotificationName:TGDealCollectStateDidChangeNotification object:nil userInfo:info];
     
 }
 @end

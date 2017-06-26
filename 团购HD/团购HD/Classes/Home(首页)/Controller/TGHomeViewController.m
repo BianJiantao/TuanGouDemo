@@ -74,7 +74,6 @@
     // 设置AwesomeMenu
     [self setupAwesomeMenu];
     
-    
     // 监听城市切换
     [TGNotificationCenter addObserver:self selector:@selector(cityDidChange:) name:TGCityDidChangeNotification object:nil];
     // 监听分类切换
@@ -141,7 +140,7 @@
             
             TGCollecController *collect = [[TGCollecController alloc] init];
             TGNavigationController *collectNav = [[TGNavigationController alloc] initWithRootViewController:collect];
-//            [self presentViewController:collectNav animated:YES completion:nil];
+            [self presentViewController:collectNav animated:YES completion:nil];
             
         }
             break;

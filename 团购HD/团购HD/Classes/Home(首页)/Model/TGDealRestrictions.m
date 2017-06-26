@@ -7,7 +7,8 @@
 //
 
 #import "TGDealRestrictions.h"
+#import "MJExtension.h"
 
 @implementation TGDealRestrictions
-
+MJCodingImplementation
 @end

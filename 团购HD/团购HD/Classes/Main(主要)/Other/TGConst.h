@@ -19,46 +19,35 @@
 #define kTGGlobalBackGroundColor kTGColorRGB(230, 230, 230)
 
 #define TGNotificationCenter [NSNotificationCenter defaultCenter]
-/**
- *  切换城市的通知
- */
+
+/**  切换城市的通知 */
 extern NSString *const TGCityDidChangeNotification;
-/**
- *  切换的城市名字 (key)
- */
+/** 切换的城市名字 (key) */
 extern NSString *const TGSelectCityName;
 
-/**
- *  切换分类的通知
- */
+/**  切换分类的通知 */
 extern NSString *const TGCategoryDidChangeNotification;
-/**
- *  切换的分类 (key)
- */
+/**  切换的分类 (key) */
 extern NSString *const TGSelectCategory;
-/**
- *  切换的子分类名称 (key)
- */
+/**  切换的子分类名称 (key) */
 extern NSString *const TGSelectSubCategoryName;
 
-/**
- *  切换区域的通知
- */
+/**  切换区域的通知 */
 extern NSString *const TGRegionDidChangeNotification;
-/**
- *  切换的区域 (key)
- */
+/**  切换的区域 (key) */
 extern NSString *const TGSelectRegion;
-/**
- *  切换的子区域名称 (key)
- */
+/** 切换的子区域名称 (key) */
 extern NSString *const TGSelectSubRegionName;
 
-/**
- *  切换排序的通知
- */
+/**  切换排序的通知 */
 extern NSString *const TGSortDidChangeNotification;
-/**
- *  切换的排序 (key)
- */
+/** 切换的排序 (key) */
 extern NSString *const TGSelectSort;
+
+/**  订单收藏状态改变 */
+extern NSString *const TGDealCollectStateDidChangeNotification;
+/**  点击的订单 */
+extern NSString *const TGDealDidCollectClicked;
+/** 该订单是否收藏 (key) */
+extern NSString *const TGDealIsCollect;
+
