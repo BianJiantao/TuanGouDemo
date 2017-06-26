@@ -25,7 +25,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *purchaseCountLabel;
 #warning 属性名不能以new开头 
 /**  新单 view */
-@property (weak, nonatomic) IBOutlet UIImageView *dealNewView; 
+@property (weak, nonatomic) IBOutlet UIImageView *dealNewView;
+/** 进入编辑状态时的遮盖 */
+@property (weak, nonatomic) IBOutlet UIButton *cover;
+/** 遮盖点击 */
+- (IBAction)coverDidClick;
+/** 是否选中的标记 */
+@property (weak, nonatomic) IBOutlet UIImageView *checkView;
+
 @end
 
 @implementation TGDealCell
@@ -74,7 +81,14 @@
     fmt.dateFormat = @"yyyy-MM-dd";  // 2017-06-22
     NSString *nowStr = [fmt stringFromDate:[NSDate date]];
     // 当前日期的团购显示 新单view
-    self.dealNewView.hidden = ([nowStr compare:deal.publish_date] == NSOrderedDescending);}
+    self.dealNewView.hidden = ([nowStr compare:deal.publish_date] == NSOrderedDescending);
+    
+    // 设置遮盖的显示 (处于编辑状态就显示遮盖)
+    self.cover.hidden = !deal.isEditing;
+    // 设置选中标记的显示 (选中状态就显示标记)
+    self.checkView.hidden = !deal.isChecking;
+}
+
 
 -(void)drawRect:(CGRect)rect
 {
@@ -85,4 +99,15 @@
     [[UIImage imageNamed:@"bg_dealcell"]  drawInRect:rect];
 }
 
+- (IBAction)coverDidClick
+{
+    // 设置选中标记的显示
+    self.checkView.hidden = !self.checkView.hidden;
+    // 设置选中状态到模型中 , 避免 cell 循环利用时, 选中标记显示混乱
+    self.deal.checking = !self.deal.checking;
+    // 选中状态改变,通知代理
+    if ([self.delegate respondsToSelector:@selector(dealCellCheckStateDidChange:)]) {
+        [self.delegate dealCellCheckStateDidChange:self];
+    }
+}
 @end

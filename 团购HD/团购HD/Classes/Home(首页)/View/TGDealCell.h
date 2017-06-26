@@ -10,8 +10,14 @@
 
 @class TGDeal, TGDealCell;
 
+@protocol TGDealCellDelegate <NSObject>
+/** cell 的选中状态发生改变 */
+-(void)dealCellCheckStateDidChange:(TGDealCell *)cell;
+
+@end
+
 @interface TGDealCell : UICollectionViewCell
 /**  团购订单模型 */
 @property (nonatomic, strong) TGDeal *deal;
-
+@property (nonatomic,weak) id<TGDealCellDelegate> delegate;
 @end

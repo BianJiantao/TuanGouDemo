@@ -101,6 +101,22 @@
                             <constraint firstAttribute="height" constant="24" id="wjN-Ky-uCh"/>
                         </constraints>
                     </imageView>
+                    <button hidden="YES" opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3x-v5-CfO" userLabel="遮盖">
+                        <rect key="frame" x="0.0" y="0.0" width="305" height="305"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="coverDidClick" destination="leD-CM-6Zm" eventType="touchUpInside" id="9ly-z2-HI4"/>
+                        </connections>
+                    </button>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_choosed" translatesAutoresizingMaskIntoConstraints="NO" id="fqw-Pi-wIF" userLabel="选中">
+                        <rect key="frame" x="279" y="279" width="26" height="26"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="5za-VA-zhP"/>
+                            <constraint firstAttribute="height" constant="26" id="PTn-3k-ntA"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -110,16 +126,24 @@
             <constraints>
                 <constraint firstItem="AhP-s0-XNA" firstAttribute="top" secondItem="leD-CM-6Zm" secondAttribute="top" id="5OI-hn-0ZS"/>
                 <constraint firstAttribute="bottom" secondItem="a5S-9d-0ff" secondAttribute="bottom" constant="10" id="Db4-HB-ft9"/>
+                <constraint firstAttribute="trailing" secondItem="E3x-v5-CfO" secondAttribute="trailing" id="DzG-HP-5pn"/>
                 <constraint firstItem="a5S-9d-0ff" firstAttribute="leading" secondItem="leD-CM-6Zm" secondAttribute="leading" constant="10" id="HcG-F1-Zbe"/>
+                <constraint firstItem="E3x-v5-CfO" firstAttribute="leading" secondItem="leD-CM-6Zm" secondAttribute="leading" id="Lfg-Tb-gnC"/>
+                <constraint firstAttribute="bottom" secondItem="E3x-v5-CfO" secondAttribute="bottom" id="MDQ-jy-XGw"/>
+                <constraint firstItem="E3x-v5-CfO" firstAttribute="top" secondItem="leD-CM-6Zm" secondAttribute="top" id="O62-G8-RJz"/>
                 <constraint firstAttribute="trailing" secondItem="a5S-9d-0ff" secondAttribute="trailing" constant="10" id="PyO-lA-tfm"/>
                 <constraint firstAttribute="trailing" secondItem="L2U-Fs-ESo" secondAttribute="trailing" constant="5" id="URe-bT-rod"/>
+                <constraint firstAttribute="trailing" secondItem="fqw-Pi-wIF" secondAttribute="trailing" id="V8X-jW-DXG"/>
                 <constraint firstItem="L2U-Fs-ESo" firstAttribute="top" secondItem="leD-CM-6Zm" secondAttribute="top" constant="5" id="bdt-Mb-Mlb"/>
                 <constraint firstItem="a5S-9d-0ff" firstAttribute="top" secondItem="L2U-Fs-ESo" secondAttribute="bottom" constant="10" id="gem-QM-9UQ"/>
                 <constraint firstItem="AhP-s0-XNA" firstAttribute="leading" secondItem="leD-CM-6Zm" secondAttribute="leading" id="wtM-dx-LiU"/>
+                <constraint firstAttribute="bottom" secondItem="fqw-Pi-wIF" secondAttribute="bottom" id="xKy-eb-dpA"/>
                 <constraint firstItem="L2U-Fs-ESo" firstAttribute="leading" secondItem="leD-CM-6Zm" secondAttribute="leading" constant="5" id="yeU-T0-pyo"/>
             </constraints>
             <size key="customSize" width="305" height="305"/>
             <connections>
+                <outlet property="checkView" destination="fqw-Pi-wIF" id="lJw-0A-hUL"/>
+                <outlet property="cover" destination="E3x-v5-CfO" id="wxs-k0-wrn"/>
                 <outlet property="currentPriceLabel" destination="Svs-aR-Kgo" id="QW5-sZ-dlb"/>
                 <outlet property="dealNewView" destination="AhP-s0-XNA" id="bKJ-gq-vfd"/>
                 <outlet property="descLabel" destination="E92-eQ-xc2" id="v7P-Ig-Abh"/>
@@ -128,10 +152,11 @@
                 <outlet property="purchaseCountLabel" destination="zjf-mc-esg" id="2ee-Bj-vNt"/>
                 <outlet property="titleLabel" destination="FXO-D1-08B" id="TtD-vw-nnY"/>
             </connections>
-            <point key="canvasLocation" x="334.5" y="224.5"/>
+            <point key="canvasLocation" x="357.5" y="202.5"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="ic_choosed" width="26" height="26"/>
         <image name="ic_deal_new" width="38" height="24"/>
         <image name="placeholder_deal" width="273" height="172"/>
     </resources>

@@ -7,6 +7,7 @@
 //
 
 #import "TGNavigationController.h"
+#import "TGConst.h"
 
 @interface TGNavigationController ()
 
@@ -18,6 +19,11 @@
 {
     UINavigationBar *bar = [UINavigationBar appearance];
     [bar setBackgroundImage:[UIImage imageNamed:@"bg_navigationBar_normal"] forBarMetrics:UIBarMetricsDefault];
+    
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName:kTGColorRGB(45, 176, 156)} forState:UIControlStateNormal];
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor lightGrayColor]} forState:UIControlStateDisabled];
+    
 }
 
 - (void)viewDidLoad {

@@ -37,6 +37,12 @@
 @property (nonatomic, copy) NSString *deal_h5_url;
 /** string	restrictions 团购限制条件 */
 @property (nonatomic, strong) TGDealRestrictions *restrictions;
+/** 是否是编辑状态 (用于显示遮盖) */
+@property (nonatomic, assign,getter = isEditing) BOOL editing;
+/** 是否是选中状态 (用于显示选中标记) */
+@property (nonatomic, assign,getter = isChecking) BOOL checking;
+
+
 @end
 
 
