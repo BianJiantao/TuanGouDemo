@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@class TGDealRestrictions;
+@class TGDealRestrictions,TGBusiness;
 
 @interface TGDeal : NSObject
 /** 团购单ID */
@@ -42,7 +42,10 @@
 /** 是否是选中状态 (用于显示选中标记) */
 @property (nonatomic, assign,getter = isChecking) BOOL checking;
 
-
+/** 商家模型数组 */
+@property (nonatomic,strong) NSArray<TGBusiness *> *businesses;
+/** 订单所属分类 (string) */
+@property (nonatomic,strong) NSArray *categories;
 @end
 
 

@@ -8,22 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@class TGCategory,TGCity,TGSort;
+@class TGCategory,TGCity,TGSort,TGDeal;
 @interface TGMetaTool : NSObject
 
-/**
- *  获取所有分类数据 (categories.plist)
- */
+/**  获取所有分类数据 (categories.plist) */
 +(NSArray<TGCategory *> *)categories;
 
-/**
- *  获取所有的城市数据 (cities.plist)
- */
+/** 获取一个订单对应的分类  */
++(TGCategory *)categoryWithDeal:(TGDeal *)deal;
+
+
+/**  获取所有的城市数据 (cities.plist) */
 +(NSArray <TGCity *> *)cities;
 
-/**
- *  获取所有的排序数据 (sorts.plist)
- */
+/**  获取所有的排序数据 (sorts.plist) */
 +(NSArray<TGSort *> *)sorts;
 
 @end

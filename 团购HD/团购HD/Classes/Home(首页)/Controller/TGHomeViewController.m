@@ -29,6 +29,7 @@
 #import "TGNavigationController.h"
 #import "TGCollecController.h"
 #import "TGScanHistoryController.h"
+#import "TGMapViewController.h"
 
 @interface TGHomeViewController ()<AwesomeMenuDelegate>
 
@@ -59,8 +60,21 @@
 
 @implementation TGHomeViewController
 
--(void)dealloc
+
+/** 控制器将要可见时,开启通知监听 */
+-(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    // 设置通知监听
+    [self setupNotifications];
+    
+}
+
+/** 控制器不可见时,移除通知监听 */
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
     [TGNotificationCenter removeObserver:self];
 }
 
@@ -73,7 +87,10 @@
     [self setupNavBarRight];
     // 设置AwesomeMenu
     [self setupAwesomeMenu];
-    
+}
+
+-(void)setupNotifications
+{
     // 监听城市切换
     [TGNotificationCenter addObserver:self selector:@selector(cityDidChange:) name:TGCityDidChangeNotification object:nil];
     // 监听分类切换
@@ -83,6 +100,9 @@
     // 监听排序切换
     [TGNotificationCenter addObserver:self selector:@selector( sortDidChange:) name:TGSortDidChangeNotification object:nil];
 }
+
+
+
 
 #pragma mark - 设置AwesomeMenu
 -(void)setupAwesomeMenu
@@ -148,7 +168,7 @@
             
             TGScanHistoryController *scan = [[TGScanHistoryController alloc] init];
             TGNavigationController *scanNav = [[TGNavigationController alloc] initWithRootViewController:scan];
-//            [self presentViewController:scanNav animated:YES completion:nil];
+            [self presentViewController:scanNav animated:YES completion:nil];
             
         }
             break;
@@ -198,7 +218,7 @@
 -(void)setupNavBarRight
 {
     // 1.地图
-    UIBarButtonItem *mapItem = [UIBarButtonItem itemWithTarget:nil action:nil image:@"icon_map" highlightedImage:@"icon_map_highlighted"];
+    UIBarButtonItem *mapItem = [UIBarButtonItem itemWithTarget:self action:@selector(map) image:@"icon_map" highlightedImage:@"icon_map_highlighted"];
 //    mapItem.customView.backgroundColor = kTGColorRandom;
     mapItem.customView.width = 50; // 设置宽度,拉开两个 item 之间的间距
     
@@ -211,6 +231,15 @@
 
 
 #pragma mark - 导航栏点击监听方法
+/** 地图按钮点击 */
+-(void)map
+{
+    TGMapViewController *map = [[TGMapViewController alloc] init];
+    TGNavigationController *mapNav = [[TGNavigationController alloc] initWithRootViewController:map];
+    [self presentViewController:mapNav animated:YES completion:nil];
+    
+}
+
 /**
  *  搜索按钮点击
  */

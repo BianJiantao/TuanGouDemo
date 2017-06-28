@@ -99,6 +99,10 @@
 		6CFBFDD91F000084004F5EEF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDD21F000084004F5EEF /* FMDatabaseQueue.m */; settings = {ASSET_TAGS = (); }; };
 		6CFBFDDA1F000084004F5EEF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDD51F000084004F5EEF /* FMResultSet.m */; settings = {ASSET_TAGS = (); }; };
 		6CFBFDDC1F00E3A6004F5EEF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CFBFDDB1F00E3A6004F5EEF /* libsqlite3.tbd */; };
+		6CFBFDE51F02845B004F5EEF /* TGMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDE31F02845B004F5EEF /* TGMapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDE61F02845B004F5EEF /* TGMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CFBFDE41F02845B004F5EEF /* TGMapViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDE91F034C2B004F5EEF /* TGBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDE81F034C2B004F5EEF /* TGBusiness.m */; settings = {ASSET_TAGS = (); }; };
+		6CFBFDED1F0350A4004F5EEF /* TGDealAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFBFDEC1F0350A4004F5EEF /* TGDealAnnotation.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +299,13 @@
 		6CFBFDD41F000084004F5EEF /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		6CFBFDD51F000084004F5EEF /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		6CFBFDDB1F00E3A6004F5EEF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		6CFBFDE21F02845B004F5EEF /* TGMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMapViewController.h; sourceTree = "<group>"; };
+		6CFBFDE31F02845B004F5EEF /* TGMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMapViewController.m; sourceTree = "<group>"; };
+		6CFBFDE41F02845B004F5EEF /* TGMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGMapViewController.xib; sourceTree = "<group>"; };
+		6CFBFDE71F034C2B004F5EEF /* TGBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGBusiness.h; sourceTree = "<group>"; };
+		6CFBFDE81F034C2B004F5EEF /* TGBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGBusiness.m; sourceTree = "<group>"; };
+		6CFBFDEB1F0350A4004F5EEF /* TGDealAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGDealAnnotation.h; sourceTree = "<group>"; };
+		6CFBFDEC1F0350A4004F5EEF /* TGDealAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGDealAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,6 +459,7 @@
 		6C7AAB2C1EF120020012AF85 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6CFBFDDD1F02812E004F5EEF /* Map(地图) */,
 				6CFBFDB71EFE5620004F5EEF /* DealDetail(订单详情) */,
 				6CFBFDAF1EFD62EB004F5EEF /* ScanHistory(浏览记录) */,
 				6CFBFDAD1EFD62E3004F5EEF /* Collection(收藏) */,
@@ -507,6 +519,8 @@
 				6C03454E1EFB86290088768B /* TGDeal.m */,
 				6CFBFDC31EFF9240004F5EEF /* TGDealRestrictions.h */,
 				6CFBFDC41EFF9240004F5EEF /* TGDealRestrictions.m */,
+				6CFBFDE71F034C2B004F5EEF /* TGBusiness.h */,
+				6CFBFDE81F034C2B004F5EEF /* TGBusiness.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -801,6 +815,34 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
+		6CFBFDDD1F02812E004F5EEF /* Map(地图) */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFDEA1F035087004F5EEF /* Model */,
+				6CFBFDDE1F02812E004F5EEF /* Controller */,
+			);
+			path = "Map(地图)";
+			sourceTree = "<group>";
+		};
+		6CFBFDDE1F02812E004F5EEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFDE21F02845B004F5EEF /* TGMapViewController.h */,
+				6CFBFDE31F02845B004F5EEF /* TGMapViewController.m */,
+				6CFBFDE41F02845B004F5EEF /* TGMapViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6CFBFDEA1F035087004F5EEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CFBFDEB1F0350A4004F5EEF /* TGDealAnnotation.h */,
+				6CFBFDEC1F0350A4004F5EEF /* TGDealAnnotation.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -905,6 +947,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CFBFDE61F02845B004F5EEF /* TGMapViewController.xib in Resources */,
 				6C7AAB581EF134820012AF85 /* TGHomeTopItem.xib in Resources */,
 				6C7AAB601EF37A2D0012AF85 /* TGHomeDropDownMenu.xib in Resources */,
 				6C7AAB421EF120B50012AF85 /* cities.plist in Resources */,
@@ -982,6 +1025,7 @@
 				6C03457F1EFB87630088768B /* UIImageView+HighlightedWebCache.m in Sources */,
 				6C0345991EFBA4700088768B /* UIScrollView+MJRefresh.m in Sources */,
 				6C7AAB4D1EF124410012AF85 /* TGConst.m in Sources */,
+				6CFBFDE91F034C2B004F5EEF /* TGBusiness.m in Sources */,
 				6CFBFDAC1EFD5744004F5EEF /* AwesomeMenuItem.m in Sources */,
 				6CFBFDC91EFFFE54004F5EEF /* TGDealTool.m in Sources */,
 				6C7AABB51EF3BF460012AF85 /* MJFoundation.m in Sources */,
@@ -995,6 +1039,7 @@
 				6CFBFDD91F000084004F5EEF /* FMDatabaseQueue.m in Sources */,
 				6C0345811EFB87630088768B /* UIView+WebCacheOperation.m in Sources */,
 				6C7AABBD1EF3C2B90012AF85 /* TGHomeDropDownMainCell.m in Sources */,
+				6CFBFDED1F0350A4004F5EEF /* TGDealAnnotation.m in Sources */,
 				6C7AAB3A1EF120020012AF85 /* AppDelegate.m in Sources */,
 				6C7AABB81EF3BF460012AF85 /* NSObject+MJCoding.m in Sources */,
 				6CFBFDD61F000084004F5EEF /* FMDatabase.m in Sources */,
@@ -1011,6 +1056,7 @@
 				6C0345731EFB87630088768B /* NSData+ImageContentType.m in Sources */,
 				6CFBFDC51EFF9240004F5EEF /* TGDealRestrictions.m in Sources */,
 				6CFBFDB31EFD6310004F5EEF /* TGCollecController.m in Sources */,
+				6CFBFDE51F02845B004F5EEF /* TGMapViewController.m in Sources */,
 				6CFBFDBC1EFE5649004F5EEF /* TGDealDetailViewController.m in Sources */,
 				6CFBFDDA1F000084004F5EEF /* FMResultSet.m in Sources */,
 				6C7AAB681EF3BCF70012AF85 /* TGCategory.m in Sources */,

@@ -9,6 +9,7 @@
 #import "MJExtension.h"
 
 #import "TGDeal.h"
+#import "TGBusiness.h"
 
 
 @implementation TGDeal
@@ -19,6 +20,12 @@ MJCodingImplementation
 {// 映射  属性名 与 字典key
     return @{@"desc":@"description"};
 }
+
++(NSDictionary *)objectClassInArray
+{
+    return @{@"businesses":[TGBusiness class]};
+}
+
 
 -(BOOL)isEqual:(TGDeal *)other
 {

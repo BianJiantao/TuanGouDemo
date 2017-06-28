@@ -11,6 +11,7 @@
 #import "TGCategory.h"
 #import "TGCity.h"
 #import "TGSort.h"
+#import "TGDeal.h"
 
 @implementation TGMetaTool
 
@@ -24,6 +25,20 @@ static NSArray *_categories;
     }
      return _categories;
 }
+
++(TGCategory *)categoryWithDeal:(TGDeal *)deal
+{
+    NSArray *categories = [self categories];
+    NSString *dealCategoryName = [deal.categories firstObject];
+    for (TGCategory *category in categories) {
+        
+        if ([category.name isEqualToString:dealCategoryName]) return category;
+        if ([category.subcategories containsObject:dealCategoryName]) return category;
+            
+    }
+    return nil;
+}
+
 
 static NSArray *_cities;
 +(NSArray<TGCity *> *)cities

@@ -6,7 +6,10 @@
 //  Copyright © 2017年 BJT. All rights reserved.
 //
 
+
+#import "UIBarButtonItem+Extension.h"
 #import "TGScanHistoryController.h"
+#import "TGConst.h"
 
 @interface TGScanHistoryController ()
 
@@ -28,9 +31,15 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 设置背景颜色
+    self.collectionView.backgroundColor = kTGGlobalBackGroundColor;
+    self.collectionView.alwaysBounceVertical = YES;
+    self.navigationItem.title = @"浏览历史记录";
+    // Register cell classes
+    [self.collectionView registerNib:[UINib nibWithNibName:@"TGDealCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // 设置导航栏按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"icon_back" highlightedImage:@"icon_back_highlighted"];
     
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
@@ -38,10 +47,11 @@ static NSString * const reuseIdentifier = @"Cell";
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)back
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 /*
 #pragma mark - Navigation

@@ -104,7 +104,7 @@ static NSString * const reuseIdentifier = @"deal";
     
     flowLayout.itemSize = CGSizeMake(305, 305);
     
-    flowLayout.minimumLineSpacing = 60;
+    flowLayout.minimumLineSpacing = 20;
     return  [super initWithCollectionViewLayout:flowLayout];
 }
 
@@ -147,6 +147,7 @@ static NSString * const reuseIdentifier = @"deal";
             break;
         }
     }
+    // 只要有选中状态的订单,删除按钮就可点击
     self.deleteItem.enabled = hasCheckedDeal;
 }
 
@@ -174,7 +175,7 @@ static NSString * const reuseIdentifier = @"deal";
 /** 删除选中 */
 -(void)dealsDelete
 {
-    // 此处应注意数组遍历时,不要对其进行 添加/删除 操作,会出错
+    // 此处应注意数组遍历时,不要对其进行 添加/删除 操作,会出错.遍历完后,统一操作
     NSMutableArray *dealsToDelete = [NSMutableArray array];
     for (TGDeal *deal in self.deals) {
         if (deal.isChecking) {
@@ -186,6 +187,7 @@ static NSString * const reuseIdentifier = @"deal";
     [self.deals removeObjectsInArray:dealsToDelete];
     
     [self.collectionView reloadData];
+    // 删除后,删除按钮不可点击
     self.deleteItem.enabled = NO;
 }
 
