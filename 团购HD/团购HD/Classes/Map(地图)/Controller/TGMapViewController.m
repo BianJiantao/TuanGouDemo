@@ -76,6 +76,8 @@
     
     // 分类菜单
     TGHomeTopItem *categoryTopItem = [TGHomeTopItem item];
+    [categoryTopItem setTitle:@"全部分类"];
+    [categoryTopItem setSubTitle:@""];
     [categoryTopItem addTarget:self action:@selector(categoryDidClick)];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc] initWithCustomView:categoryTopItem];
     self.categoryItem = categoryItem;

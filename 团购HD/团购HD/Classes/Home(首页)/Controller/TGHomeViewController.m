@@ -191,12 +191,16 @@
     
     // 2. 分类
     TGHomeTopItem *categoryTopItem = [TGHomeTopItem item];
+    [categoryTopItem setTitle:@"全部分类"];
+    [categoryTopItem setSubTitle:@""];
     [categoryTopItem addTarget:self action:@selector(categoryDidClick)];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc] initWithCustomView:categoryTopItem];
     self.categoryItem = categoryItem;
     
     // 3. 地区
     TGHomeTopItem *districtTopItem = [TGHomeTopItem item];
+    [districtTopItem setTitle:@"城市"];
+    [districtTopItem setSubTitle:@"市区街道"];
     [districtTopItem setIcon:@"icon_district" highlightedIcon:@"icon_district_highlighted"];
     [districtTopItem addTarget:self action:@selector(districtDidClick)];
     UIBarButtonItem *districtItem = [[UIBarButtonItem alloc] initWithCustomView:districtTopItem];
@@ -206,6 +210,8 @@
     TGHomeTopItem *sortTopItem = [TGHomeTopItem item];
     [sortTopItem setIcon:@"icon_sort" highlightedIcon:@"icon_sort_highlighted"];
     [sortTopItem setTitle:@"排序"];
+    [sortTopItem setSubTitle:@"默认排序"];
+    
     [sortTopItem addTarget:self action:@selector(sortDidClick)];
     UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithCustomView:sortTopItem];
     self.sortItem = sortItem;

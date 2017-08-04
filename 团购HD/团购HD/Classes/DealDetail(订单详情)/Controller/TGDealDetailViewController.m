@@ -177,6 +177,7 @@
 {
     // 利用 JavaScript 删除订单详情 html 页面中的一些按钮
     NSMutableString *js = [NSMutableString string];
+
     // 移除 header 返回按钮
     [js appendString:@"var tgHeader = document.getElementsByTagName('header')[0];"];
     [js appendString:@"tgHeader.parentNode.removeChild(tgHeader);"];

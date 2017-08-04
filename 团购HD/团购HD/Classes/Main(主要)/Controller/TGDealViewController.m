@@ -101,7 +101,7 @@ static NSString * const reuseIdentifier = @"deal";
     
     // 设置请求参数
     NSMutableDictionary *paras = [NSMutableDictionary dictionary];
-    // 之所以可以去子类找到 setupRequestParas: 方法,因为 self 其实指向的是子类
+    // TIPS : 之所以可以去子类找到 setupRequestParas: 方法,因为 self 其实指向的是子类
 //    TGLog(@"%@",self);
     [self setupRequestParas:paras];
     
